@@ -9,3 +9,4 @@ Muita tiedostoja:
 [komentorivi.txt](https://github.com/kallioaa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 Muutosta etärepositiolle
+ja vielä lisää!
