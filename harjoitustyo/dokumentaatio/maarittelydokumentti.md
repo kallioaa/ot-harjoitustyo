@@ -6,8 +6,8 @@ jakavat samoja kuvia, joille ei ole kuitenkaan olemassa yhteistä kommenttikentt
 
 ## Käyttäjät
 
-*Normaalikäyttäjä (käyttäjä)
-*Admin käyttäjä, jolla on oikeus poistaa kuva ja siihen liittyvät kommentit sovelluksesta.
+* Normaalikäyttäjä (käyttäjä)
+* Admin käyttäjä, jolla on oikeus poistaa kuva ja siihen liittyvät kommentit sovelluksesta.
 
 ## Suunnitellut toiminnallisuudet
 
