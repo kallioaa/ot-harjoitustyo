@@ -9,7 +9,7 @@ jakavat samoja kuvia, joille ei ole kuitenkaan olemassa yhteistä kommenttikentt
 * Normaalikäyttäjä (käyttäjä)
 * Admin käyttäjä, jolla on oikeus poistaa kuva ja siihen liittyvät kommentit sovelluksesta.
 
-## Suunnitellut toiminnallisuudet
+## Suunnitellut toiminnallisuudet (normaalikäyttäjä)
 
 * Käyttäjä voi kopioda ohjelmaan kuvan, jonka jälkeen käyttälle näytetään kuvasta kirjoitetut kommentit.
 * käyttäjä voi myös etsiä kuvan sen ID arvon avulla.
