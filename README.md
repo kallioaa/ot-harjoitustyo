@@ -10,7 +10,7 @@ Muita tiedostoja:
 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/maarittelydokumentti.md)
 
-[Työaikakiranoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/työaikakirjanpito.md)
+[Työaikakirjanoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/työaikakirjanpito.md)
 
 Muutosta etärepositiolle
 ja vielä lisää!
