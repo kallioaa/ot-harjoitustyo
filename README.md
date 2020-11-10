@@ -8,5 +8,9 @@ Muita tiedostoja:
 
 [komentorivi.txt](https://github.com/kallioaa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+
+[Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/harjoitustyo/dokumentaatio/maarittelydokumentti.md)
+
+
 Muutosta etärepositiolle
 ja vielä lisää!
