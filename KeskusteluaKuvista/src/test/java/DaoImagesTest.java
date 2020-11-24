@@ -2,7 +2,6 @@
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Random;
 import javax.imageio.ImageIO;
 import keskusteluakuvista.Image;
 import keskusteluakuvista.database.*;
@@ -25,8 +24,7 @@ public class DaoImagesTest {
     
     @Before
     public void setUp() {
-        Integer uusi = new Random().nextInt(1000);
-        Dao dao = new Dao("resourcesDb/testDb" + uusi + ".db");
+        Dao dao = new Dao("resourcesDb/testDb1.db",true);
         this.imgdao = new DaoImages(dao.getConnection());
     }
     

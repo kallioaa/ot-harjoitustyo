@@ -20,7 +20,7 @@ public class Main {
     
     //Creates instances of the objects and starts the text user interface. Will be replaced with GUI in later versions. 
     public static void main(String[] args) {
-        Dao dao = new Dao("resourcesDb/kkDatabase.db");
+        Dao dao = new Dao("resourcesDb/kkDatabase.db",false);
         DaoImages imagesDao = new DaoImages(dao.getConnection());
         DaoChat chatsDao = new DaoChat(dao.getConnection());
         ApplicationLogic logic = new ApplicationLogic(imagesDao,chatsDao);

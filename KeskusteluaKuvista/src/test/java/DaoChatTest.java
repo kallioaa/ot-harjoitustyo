@@ -1,8 +1,7 @@
 
-import java.util.Random;
+
 import keskusteluakuvista.database.Dao;
 import keskusteluakuvista.database.DaoChat;
-import keskusteluakuvista.database.DaoImages;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,8 +22,7 @@ public class DaoChatTest {
     
     @Before
     public void setUp() {
-        Integer uusi = new Random().nextInt(1000);
-        Dao dao = new Dao("resourcesDb/testDb" + uusi + ".db");
+        Dao dao = new Dao("resourcesDb/testDb2.db",true);
         this.chatdb = new DaoChat(dao.getConnection());
     }
     

@@ -20,9 +20,11 @@ import java.util.List;
  */
 public class Dao {
     private String url;
+    private boolean testMode;
     private Connection connection;
     
-    public Dao(String url) {
+    public Dao(String url, Boolean testMode) {
+        this.testMode = testMode;
         this.url = url;
         this.initializeDb();
         try {
@@ -37,11 +39,10 @@ public class Dao {
     }
 
 
-
     private void initializeDb() {
         try {
             File file = new File(url);
-            if (!file.exists()) {
+            if (!file.exists() | this.testMode) {
                 Path path = new File("./resourcesDb/tables.sql").toPath();
                 List<String> fileLines = Files.readAllLines(path, StandardCharsets.UTF_8);
                 Connection db = DriverManager.getConnection("jdbc:sqlite:" + url);
