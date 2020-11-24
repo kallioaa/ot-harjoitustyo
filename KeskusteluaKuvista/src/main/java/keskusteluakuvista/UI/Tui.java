@@ -3,21 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package keskusteluakuvista;
+package keskusteluakuvista.UI;
 
 import java.util.Scanner;
+import keskusteluakuvista.ApplicationLogic;
 
 /**
  *
  * @author aatukallio
  */
-public class Tui {
-    private Scanner scanner;
+public class Tui implements UI{
+    private IO scanner;
     private ApplicationLogic logic;
             
-    public Tui(ApplicationLogic logic) {
+    public Tui(ApplicationLogic logic,IO scanner) {
         this.logic = logic;
-        this.scanner = new Scanner(System.in);
+        this.scanner = scanner;
     }
     
     //The method for running the text user interface.

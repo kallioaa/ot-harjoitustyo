@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
-import keskusteluakuvista.DatabaseImages;
+import keskusteluakuvista.database.DatabaseImages;
 import keskusteluakuvista.Image;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,7 +26,7 @@ public class DatabaseImagesTest {
     
     public DatabaseImagesTest() {
     }
-    
+    /*
     @Before
     public void setUp() {
         this.database = new DatabaseImages();
@@ -60,6 +60,6 @@ public class DatabaseImagesTest {
         database.imageID(new Image(img2));
         assertTrue(2==database.imageID(new Image(img2)));  
     }
-    
+    */
     
 }

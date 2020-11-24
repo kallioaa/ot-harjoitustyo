@@ -3,15 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package keskusteluakuvista;
+package keskusteluakuvista.database;
 
 
 import java.util.HashMap;
+import keskusteluakuvista.Image;
 
 /*
 This class exists only to simulate the operations of database. Will be replaced with sqlite implementation.
  */
 public class DatabaseImages {
+    
+    
+    
+    
     private HashMap<Image,Integer> images;
     private Integer n;
     
@@ -34,11 +39,6 @@ public class DatabaseImages {
             return this.images.get(image);
         }
     }
-    
-    
-    
-    
-    
-    
+   
     
 }

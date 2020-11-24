@@ -3,11 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package keskusteluakuvista;
+package keskusteluakuvista.UI;
 
-/*
-Class is not yet implemented. 
+/**
+ *
+ * @author aatukallio
  */
-public class Gui {
-    
+public interface IO {
+    public String nextLine();
+    public void print(String m);
 }
