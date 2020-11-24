@@ -8,7 +8,7 @@ package keskusteluakuvista.UI;
 /*
 Class is not yet implemented. 
  */
-public class Gui implements UI {
+public class Gui implements Ui {
     
     
 }

@@ -9,6 +9,6 @@ package keskusteluakuvista.UI;
  *
  * @author aatukallio
  */
-public interface UI {
+public interface Ui {
     
 }

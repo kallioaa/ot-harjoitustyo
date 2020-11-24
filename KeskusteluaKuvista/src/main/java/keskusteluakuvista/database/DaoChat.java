@@ -25,7 +25,7 @@ public class DaoChat {
         this.db = db;
     }
     
-    public void addMessage(Integer id,String text) {
+    public void addMessage(Integer id, String text) {
         try {
             PreparedStatement p  = db.prepareStatement("INSERT INTO Messages (id,message) VALUES (?,?)");
             p.setInt(1, id);

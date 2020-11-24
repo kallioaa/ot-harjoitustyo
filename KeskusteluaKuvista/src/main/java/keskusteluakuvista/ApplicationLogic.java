@@ -20,7 +20,7 @@ public class ApplicationLogic {
     private DaoImages daoImages;
     private DaoChat daoChat;
 
-    public ApplicationLogic(DaoImages daoImages, DaoChat daoChat){
+    public ApplicationLogic(DaoImages daoImages, DaoChat daoChat) {
         this.daoImages = daoImages;
         this.daoChat = daoChat;
     } 
@@ -39,7 +39,7 @@ public class ApplicationLogic {
         return daoChat.getMessages(id);
     }
     
-    public void addMessage(Integer id,String text) {
+    public void addMessage(Integer id, String text) {
         daoChat.addMessage(id, text);
     }
     

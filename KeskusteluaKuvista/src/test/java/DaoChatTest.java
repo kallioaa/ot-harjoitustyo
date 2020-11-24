@@ -29,7 +29,7 @@ public class DaoChatTest {
     @Test
     public void addChat() {
         chatdb.addMessage(1, "Moikka miten menee");
-        chatdb.addMessage(1, "Erittäin huonosti");
+        chatdb.addMessage(1, "Erittain huonosti");
         assertTrue(2==chatdb.getMessages(1).size());
     }
     

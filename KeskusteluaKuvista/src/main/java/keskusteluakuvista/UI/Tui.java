@@ -13,11 +13,11 @@ import keskusteluakuvista.ApplicationLogic;
  *
  * @author aatukallio
  */
-public class Tui implements UI{
+public class Tui implements Ui {
     private IO scanner;
     private ApplicationLogic logic;
             
-    public Tui(ApplicationLogic logic,IO scanner) {
+    public Tui(ApplicationLogic logic, IO scanner) {
         this.logic = logic;
         this.scanner = scanner;
     }

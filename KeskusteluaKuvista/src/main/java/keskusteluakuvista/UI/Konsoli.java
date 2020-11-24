@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author aatukallio
  */
-public class Konsoli implements IO{
+public class Konsoli implements IO {
     private Scanner scanner;
     
     public Konsoli() {
