@@ -22,37 +22,37 @@ public class Dao {
     private String url;
     private Connection connection;
     
-   public Dao(String url) {
-       this.url = url;
-       this.initializeDb();
-       try {
-           this.connection = DriverManager.getConnection("jdbc:sqlite:"+ url);
-       } catch (SQLException e) {
-           System.out.println(e);
-       }
-   }   
-   
-   public Connection getConnection() {
-       return this.connection;
-   }
+    public Dao(String url) {
+        this.url = url;
+        this.initializeDb();
+        try {
+            this.connection = DriverManager.getConnection("jdbc:sqlite:"+ url);
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }   
 
-   
-   
-   private void initializeDb() {
-       try {
-           File file = new File(url);
-           if(!file.exists()) {
-               Path path = new File("./resourcesDb/tables.sql").toPath();
-               List<String> fileLines = Files.readAllLines(path, StandardCharsets.UTF_8);
-               Connection db = DriverManager.getConnection("jdbc:sqlite:"+ url);
-               Statement s = db.createStatement();
-               for (String command:fileLines) {
-                   s.execute(command);
-               }
-            }    
-       } catch(Exception e) {
-           System.out.println(e);
-       }
-           
-   }
+    public Connection getConnection() {
+        return this.connection;
+    }
+
+
+
+    private void initializeDb() {
+        try {
+            File file = new File(url);
+            if(!file.exists()) {
+                Path path = new File("./resourcesDb/tables.sql").toPath();
+                List<String> fileLines = Files.readAllLines(path, StandardCharsets.UTF_8);
+                Connection db = DriverManager.getConnection("jdbc:sqlite:"+ url);
+                Statement s = db.createStatement();
+                for (String command:fileLines) {
+                    s.execute(command);
+                }
+             }    
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+
+    }
 }
