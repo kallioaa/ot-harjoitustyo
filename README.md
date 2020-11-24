@@ -1,7 +1,12 @@
 # Keskusteluakuvista -- Image buzzer
+## VIIKKO4
+
+Tietokannat luotu viesteille sekä kuville, joten vanhat tapahtumat jää muistiin. Tekstikäyttöliittymän kautta pystyy kommentoimaan kuvia. Rakennetta refaktoroitu.
+
+
 ## VIIKKO3
 
-Sovellukseen luoto luokkiin jotain toiminnallisuutta sekä testejä. Yksinkertainen tekstikäyttöliittymään voi nyt antaa eri kuvien URL osoitteita, jonka jälkeen kuvista tallennetaan tietoa ja niille määrätään ID:t.
+Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertaiseen tekstikäyttöliittymään voi nyt antaa eri kuvien URL osoitteita, jonka jälkeen kuvista tallennetaan tietoa ja niille määrätään ID:t.
 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
