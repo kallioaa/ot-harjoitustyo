@@ -1,1 +1,1 @@
-![arkkitehtuuri](pictures/rakenne.pn)
+![arkkitehtuuri](./pictures/rakenne.pn)
