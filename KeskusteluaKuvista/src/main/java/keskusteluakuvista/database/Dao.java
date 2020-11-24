@@ -26,7 +26,7 @@ public class Dao {
         this.url = url;
         this.initializeDb();
         try {
-            this.connection = DriverManager.getConnection("jdbc:sqlite:"+ url);
+            this.connection = DriverManager.getConnection("jdbc:sqlite:" + url);
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -41,16 +41,16 @@ public class Dao {
     private void initializeDb() {
         try {
             File file = new File(url);
-            if(!file.exists()) {
+            if (!file.exists()) {
                 Path path = new File("./resourcesDb/tables.sql").toPath();
                 List<String> fileLines = Files.readAllLines(path, StandardCharsets.UTF_8);
-                Connection db = DriverManager.getConnection("jdbc:sqlite:"+ url);
+                Connection db = DriverManager.getConnection("jdbc:sqlite:" + url);
                 Statement s = db.createStatement();
                 for (String command:fileLines) {
                     s.execute(command);
                 }
-             }    
-        } catch(Exception e) {
+            }    
+        } catch (Exception e) {
             System.out.println(e);
         }
 

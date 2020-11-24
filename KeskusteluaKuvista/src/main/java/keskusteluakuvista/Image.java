@@ -27,8 +27,8 @@ public class Image {
         this.pixels = new ArrayList<>();
         this.height = image.getHeight();
         this.width = image.getWidth();
-        for (int x = 0;x <= this.width - this.width/10; x = x + this.width/10) {
-            for (int y = 0;y <= this.height - this.height/10;y = y + this.height/10) {
+        for (int x = 0;x <= this.width - this.width / 10; x = x + this.width / 10) {
+            for (int y = 0; y <= this.height - this.height / 10; y = y + this.height / 10) {
                 pixels.add(image.getRGB(x, y));
             }
         }
@@ -37,14 +37,17 @@ public class Image {
     @Override
     public boolean equals(Object o) {
         // self check
-        if (this == o)
+        if (this == o) {
             return true;
+        }
         // null check
-        if (o == null)
+        if (o == null) {
             return false;
+        }
         // type check and cast
-        if (getClass() != o.getClass())
+        if (getClass() != o.getClass()) {
             return false;
+        }
         Image img = (Image) o;
         if (!Objects.equals(this.height, img.height)) {
             return false;
