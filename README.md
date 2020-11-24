@@ -12,3 +12,5 @@ Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertais
 
 [Työaikakirjanoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
 
+[Arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+
