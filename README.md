@@ -8,6 +8,7 @@ Tietokannat luotu viesteille sekä kuville, joten vanhat tapahtumat jää muisti
 
 Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertaiseen tekstikäyttöliittymään voi nyt antaa eri kuvien URL osoitteita, jonka jälkeen kuvista tallennetaan tietoa ja niille määrätään ID:t.
 
+## 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 [Työaikakirjanoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
