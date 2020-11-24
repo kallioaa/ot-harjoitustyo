@@ -31,6 +31,9 @@ public class Tui implements UI {
             String input = this.scanner.nextLine().strip().toLowerCase();
             if (input.equals("s")) {
                 Integer id = this.insertImage();
+                if (id==-1) {
+                    continue;
+                }
                 this.printComments(id);
                 this.scanner.print("Do you want to comment: y(yes)");
                 input = this.scanner.nextLine().toLowerCase();
