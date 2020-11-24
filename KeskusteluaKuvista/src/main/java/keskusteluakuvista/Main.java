@@ -20,12 +20,13 @@ public class Main {
     
     //Creates instances of the objects and starts the text user interface. Will be replaced with GUI in later versions. 
     public static void main(String[] args) {
-        Dao connection = new Dao("resourcesDb/kkDatabase.db"); 
-        DaoImages imagesDb = new DaoImages(connection.getConnection());
-        ApplicationLogic logic = new ApplicationLogic(imagesDb);
+        Dao dao = new Dao("resourcesDb/kkDatabase.db");
+        DaoImages imagesDao = new DaoImages(dao.getConnection());
+        DaoChat chatsDao = new DaoChat(dao.getConnection());
+        ApplicationLogic logic = new ApplicationLogic(imagesDao,chatsDao);
         Tui tui = new Tui(logic,new Konsoli());
         tui.run();
-        imagesDb.printValues();
+
         //DaoChat chatDb = new DaoChat(connection.getConnection());
     }
 }

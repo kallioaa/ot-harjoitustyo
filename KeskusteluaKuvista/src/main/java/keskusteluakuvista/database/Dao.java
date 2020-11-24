@@ -49,8 +49,6 @@ public class Dao {
                for (String command:fileLines) {
                    s.execute(command);
                }
-            
-               
             }    
        } catch(Exception e) {
            System.out.println(e);

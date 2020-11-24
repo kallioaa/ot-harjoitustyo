@@ -37,6 +37,25 @@ public class DaoImagesTest {
         assertTrue(1==imgdao.addImage(new Image(img)));  
     }
     
+    @Test
+    public void addAllDogAskSecond() throws IOException {
+        BufferedImage img1 = null;
+        BufferedImage img2 = null;
+        BufferedImage img3 = null;
+        img1 = ImageIO.read(new File("testImages","koira1.jpg"));
+        img2 = ImageIO.read(new File("testImages","koira2.jpg"));
+        img3 = ImageIO.read(new File("testImages","koira3.jpg"));
+        imgdao.addImage(new Image(img1));
+        imgdao.addImage(new Image(img2));
+        imgdao.addImage(new Image(img2));
+        imgdao.addImage(new Image(img1));
+        imgdao.addImage(new Image(img3));
+        imgdao.addImage(new Image(img3));
+        imgdao.addImage(new Image(img1));
+        imgdao.addImage(new Image(img2));
+        assertTrue(2==imgdao.addImage(new Image(img2)));
+    }
+       
     
     
 }

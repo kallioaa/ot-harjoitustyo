@@ -45,7 +45,7 @@ public class DaoImages {
             }  
         }
     }
-    
+    /*
     public void printValues() {
         try {
             Statement s = this.db.createStatement();
@@ -57,6 +57,7 @@ public class DaoImages {
             System.out.println(e);
         }
     }
+    */
     
     private Integer contains(Image image) {
         try {

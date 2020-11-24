@@ -14,9 +14,6 @@ This class exists only to simulate the operations of database. Will be replaced 
  */
 public class DatabaseImages {
     
-    
-    
-    
     private HashMap<Image,Integer> images;
     private Integer n;
     

@@ -5,6 +5,7 @@
  */
 package keskusteluakuvista.UI;
 
+import java.util.List;
 import java.util.Scanner;
 import keskusteluakuvista.ApplicationLogic;
 
@@ -25,23 +26,39 @@ public class Tui implements UI{
     public void run() {
         boolean running = true;
         while (running) {
-            Scanner myObj = new Scanner(System.in); 
-            System.out.println("Select operation with typing the corresponding letter: \nSearch with image (S) \nExit (E)\n");
-            String input = scanner.nextLine().strip().toLowerCase();
+            this.scanner.print("\nSelect operation with typing the corresponding letter: \nSearch with image (S) \nExit (E)\n");
+            String input = this.scanner.nextLine().strip().toLowerCase();
             if (input.equals("s")) {
-                System.out.println("The URL of the picture");
-                input = scanner.nextLine();
-                System.out.println(this.logic.searchImageFromInternet(input));
+                Integer id = this.insertImage();
+                this.printComments(id);
+                this.scanner.print("Do you want to comment: y(yes)");
+                input = this.scanner.nextLine().toLowerCase();
+                if (input.equals("y")) {
+                    this.addComment(id);
+                    this.printComments(id);
+                }
             } else if (input.equals("e")) {
                 running = false;
             } else {
-                System.out.println("Wrong input");
+                this.scanner.print("Wrong input");
             }
         }
     }
+    private void addComment(Integer id) {
+        String input = scanner.nextLine();
+        this.logic.addMessage(id, input);
+    }
     
-   
-   
+    private Integer insertImage() {
+        scanner.print("Insert URL");
+        String url = scanner.nextLine();
+        return logic.searchImageID(url);
+    }
     
-    
+    private void printComments(Integer id) {
+        List<String> chat = logic.showChat(id);
+        this.scanner.print("\nKommentit:");
+        chat.forEach(s -> scanner.print(s));
+        System.out.println("");
+    }
 }
