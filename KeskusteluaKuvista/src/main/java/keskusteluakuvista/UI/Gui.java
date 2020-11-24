@@ -8,7 +8,10 @@ package keskusteluakuvista.UI;
 /*
 Class is not yet implemented. 
  */
-public class Gui implements Ui {
+public class Gui implements UI {
     
-    
+    @Override
+    public void run() {
+        //todo
+    }
 }

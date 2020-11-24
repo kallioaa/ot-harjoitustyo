@@ -13,7 +13,7 @@ import keskusteluakuvista.ApplicationLogic;
  *
  * @author aatukallio
  */
-public class Tui implements Ui {
+public class Tui implements UI {
     private IO scanner;
     private ApplicationLogic logic;
             
@@ -23,6 +23,7 @@ public class Tui implements Ui {
     }
     
     //The method for running the text user interface.
+    @Override
     public void run() {
         boolean running = true;
         while (running) {
