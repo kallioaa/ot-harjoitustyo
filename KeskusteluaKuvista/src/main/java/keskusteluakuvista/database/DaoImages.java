@@ -42,7 +42,7 @@ public class DaoImages {
         }
     }
     
-    public Integer numberOfRows() {
+    private Integer numberOfRows() {
         try {
             PreparedStatement p  = db.prepareStatement("SELECT COUNT(*) FROM Images");
             return p.executeQuery().getInt(1);
