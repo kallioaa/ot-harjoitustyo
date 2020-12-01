@@ -3,7 +3,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import keskusteluakuvista.Image;
+import keskusteluakuvista.ImageToHash;
 import keskusteluakuvista.database.*;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
@@ -32,9 +32,9 @@ public class DaoImagesTest {
     public void addOneDogThreeTimes() throws IOException {
         BufferedImage img = null;
         img = ImageIO.read(new File("testImages","koira1.jpg"));
-        imgdao.addImage(new Image(img));
-        imgdao.addImage(new Image(img));
-        assertTrue(1==imgdao.addImage(new Image(img)));  
+        imgdao.addImage(new ImageToHash(img));
+        imgdao.addImage(new ImageToHash(img));
+        assertTrue(1==imgdao.addImage(new ImageToHash(img)));  
     }
     
     @Test
@@ -45,15 +45,15 @@ public class DaoImagesTest {
         img1 = ImageIO.read(new File("testImages","koira1.jpg"));
         img2 = ImageIO.read(new File("testImages","koira2.jpg"));
         img3 = ImageIO.read(new File("testImages","koira3.jpg"));
-        imgdao.addImage(new Image(img1));
-        imgdao.addImage(new Image(img2));
-        imgdao.addImage(new Image(img2));
-        imgdao.addImage(new Image(img1));
-        imgdao.addImage(new Image(img3));
-        imgdao.addImage(new Image(img3));
-        imgdao.addImage(new Image(img1));
-        imgdao.addImage(new Image(img2));
-        assertTrue(2==imgdao.addImage(new Image(img2)));
+        imgdao.addImage(new ImageToHash(img1));
+        imgdao.addImage(new ImageToHash(img2));
+        imgdao.addImage(new ImageToHash(img2));
+        imgdao.addImage(new ImageToHash(img1));
+        imgdao.addImage(new ImageToHash(img3));
+        imgdao.addImage(new ImageToHash(img3));
+        imgdao.addImage(new ImageToHash(img1));
+        imgdao.addImage(new ImageToHash(img2));
+        assertTrue(2==imgdao.addImage(new ImageToHash(img2)));
     }
        
     

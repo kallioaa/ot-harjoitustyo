@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import javax.imageio.ImageIO;
 import keskusteluakuvista.database.DatabaseImages;
-import keskusteluakuvista.Image;
+import keskusteluakuvista.ImageToHash;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -37,9 +37,9 @@ public class DatabaseImagesTest {
     public void addOneDogThreeTimes() throws IOException {
         BufferedImage img = null;
         img = ImageIO.read(new File("testImages","koira1.jpg"));
-        database.imageID(new Image(img));
-        database.imageID(new Image(img));
-        assertTrue(1==database.imageID(new Image(img)));  
+        database.imageID(new ImageToHash(img));
+        database.imageID(new ImageToHash(img));
+        assertTrue(1==database.imageID(new ImageToHash(img)));  
     }
     
     @Test
@@ -50,15 +50,15 @@ public class DatabaseImagesTest {
         img1 = ImageIO.read(new File("testImages","koira1.jpg"));
         img2 = ImageIO.read(new File("testImages","koira2.jpg"));
         img3 = ImageIO.read(new File("testImages","koira3.jpg"));
-        database.imageID(new Image(img1));
-        database.imageID(new Image(img2));
-        database.imageID(new Image(img2));
-        database.imageID(new Image(img1));
-        database.imageID(new Image(img3));
-        database.imageID(new Image(img3));
-        database.imageID(new Image(img1));
-        database.imageID(new Image(img2));
-        assertTrue(2==database.imageID(new Image(img2)));  
+        database.imageID(new ImageToHash(img1));
+        database.imageID(new ImageToHash(img2));
+        database.imageID(new ImageToHash(img2));
+        database.imageID(new ImageToHash(img1));
+        database.imageID(new ImageToHash(img3));
+        database.imageID(new ImageToHash(img3));
+        database.imageID(new ImageToHash(img1));
+        database.imageID(new ImageToHash(img2));
+        assertTrue(2==database.imageID(new ImageToHash(img2)));  
     }
     */
     

@@ -24,6 +24,7 @@ public class Dao {
     private Connection connection;
     
     public Dao(String url, Boolean testMode) {
+        
         this.testMode = testMode;
         this.url = url;
         this.initializeDb();

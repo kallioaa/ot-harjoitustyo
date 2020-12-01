@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package keskusteluakuvista;
-import keskusteluakuvista.database.DatabaseImages;
+
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import javax.imageio.ImageIO;
 import keskusteluakuvista.database.DaoChat;
@@ -19,28 +20,38 @@ import keskusteluakuvista.database.DaoImages;
 public class ApplicationLogic {
     private DaoImages daoImages;
     private DaoChat daoChat;
+    private Integer ImageId;
 
     public ApplicationLogic(DaoImages daoImages, DaoChat daoChat) {
         this.daoImages = daoImages;
         this.daoChat = daoChat;
     } 
     //The method fetches the picture from the given URL and inserts it into the "database". 
-    public Integer searchImageID(String url) {
+    public void searchImageID(String url) {
         try {
             BufferedImage img = null;
             img = ImageIO.read(new URL(url));
-            return daoImages.addImage(new Image(img));
+            this.ImageId = daoImages.addImage(new ImageToHash(img));
         } catch (IOException e) {
-            return -1;
+            this.ImageId = null;
         }
     }
     
-    public List<String> showChat(Integer id) {
-        return daoChat.getMessages(id);
+    public Integer getImageID() {
+        return this.ImageId;
     }
     
-    public void addMessage(Integer id, String text) {
-        daoChat.addMessage(id, text);
+    public List<String> showChat() {
+        if (this.ImageId != null) {
+            return daoChat.getMessages(this.ImageId);
+        }
+        return new ArrayList<>();
+    }
+    
+    public void addMessage(String text) {
+        if (!text.isEmpty()) {
+            this.daoChat.addMessage(this.getImageID(), text.strip());
+        }
     }
     
 

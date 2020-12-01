@@ -1,5 +1,4 @@
 
-
 import keskusteluakuvista.database.Dao;
 import keskusteluakuvista.database.DaoChat;
 import static org.junit.Assert.assertTrue;
@@ -31,7 +30,6 @@ public class DaoChatTest {
         chatdb.addMessage(1, "Moikka miten menee");
         chatdb.addMessage(1, "Erittain huonosti");
         assertTrue(2==chatdb.getMessages(1).size());
-        
     }
     
     
