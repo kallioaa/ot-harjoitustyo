@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="keskusteluakuvista.gui.Controller">
+<VBox maxHeight="800" maxWidth="500" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="keskusteluakuvista.gui.Controller">
    <children>
       <MenuBar>
         <menus>
