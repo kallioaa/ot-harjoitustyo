@@ -2,7 +2,7 @@
 
 ## VIIKKO5
 
-Gui luotu. Hakemistosta IamgeChatterV1 löytyy suoritettava jar-tiedosto sovelluksesta.
+Gui luotu. Ohelmasta puuttuu vielä käyttäjätunnuksien luominen.
 
 ## VIIKKO4
 
