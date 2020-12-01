@@ -17,7 +17,6 @@ import keskusteluakuvista.ImageToHash;
  */
 public class DaoImages {
     
-    private Integer image;
     private Connection db;
     
     public DaoImages(Connection db) {
