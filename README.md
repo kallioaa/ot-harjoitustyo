@@ -20,3 +20,5 @@ Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertais
 
 [Arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
+[Release](https://github.com/kallioaa/ot-harjoitustyo/releases/tag/viikko5)
+
