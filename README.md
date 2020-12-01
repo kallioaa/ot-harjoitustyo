@@ -1,4 +1,9 @@
 # Keskusteluakuvista -- Image buzzer
+
+## VIIKKO5
+
+Gui luotu. Hakemistosta IamgeChatterV1 löytyy suoritettava jar-tiedosto sovelluksesta.
+
 ## VIIKKO4
 
 Tietokannat luotu viesteille sekä kuville, joten vanhat tapahtumat jää muistiin. Tekstikäyttöliittymän kautta pystyy kommentoimaan kuvia. Rakennetta refaktoroitu.
