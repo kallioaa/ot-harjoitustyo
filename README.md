@@ -1,4 +1,4 @@
-# Keskusteluakuvista -- Image buzzer
+# Keskusteluakuvista -- ImageChatter
 
 ## Ohjelman käyttöohje
 
