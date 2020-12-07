@@ -1,8 +1,12 @@
-# Keskusteluakuvista -- Image buzzer
+# Keskusteluakuvista -- ImageChatter
+
+## Ohjelman käyttöohje
+
+Voit kopioida ohjelmaan kuvien url-osoitteita netistä. Jotta ohjelma toimisi, katso että sivulla ei ole muuta kuin kuva ja kuvan osoite ei ole "data"-alkuinen. 
 
 ## VIIKKO5
 
-Gui luotu. Hakemistosta IamgeChatterV1 löytyy suoritettava jar-tiedosto sovelluksesta.
+Gui luotu. Ohelmasta puuttuu vielä käyttäjätunnuksien luominen.
 
 ## VIIKKO4
 
