@@ -24,17 +24,16 @@ public class DaoImagesTest {
     
     @Before
     public void setUp() {
-        Dao dao = new Dao("resourcesDb/testDb1.db",true);
-        this.imgdao = new DaoImages(dao.getConnection());
+        this.imgdao = DaoImages.getInstance();
     }
     
     @Test
     public void addOneDogThreeTimes() throws IOException {
         BufferedImage img = null;
         img = ImageIO.read(new File("testImages","koira1.jpg"));
-        imgdao.addImage(new ImageToHash(img));
-        imgdao.addImage(new ImageToHash(img));
-        assertTrue(1==imgdao.addImage(new ImageToHash(img)));  
+        imgdao.addImage(new ImageToHash(img),"kalle");
+        imgdao.addImage(new ImageToHash(img),"kalle");
+        assertTrue(1==imgdao.addImage(new ImageToHash(img),"kalle"));  
     }
     
     @Test
@@ -45,15 +44,15 @@ public class DaoImagesTest {
         img1 = ImageIO.read(new File("testImages","koira1.jpg"));
         img2 = ImageIO.read(new File("testImages","koira2.jpg"));
         img3 = ImageIO.read(new File("testImages","koira3.jpg"));
-        imgdao.addImage(new ImageToHash(img1));
-        imgdao.addImage(new ImageToHash(img2));
-        imgdao.addImage(new ImageToHash(img2));
-        imgdao.addImage(new ImageToHash(img1));
-        imgdao.addImage(new ImageToHash(img3));
-        imgdao.addImage(new ImageToHash(img3));
-        imgdao.addImage(new ImageToHash(img1));
-        imgdao.addImage(new ImageToHash(img2));
-        assertTrue(2==imgdao.addImage(new ImageToHash(img2)));
+        imgdao.addImage(new ImageToHash(img1),"kalle");
+        imgdao.addImage(new ImageToHash(img2),"kalle");
+        imgdao.addImage(new ImageToHash(img2),"kalle");
+        imgdao.addImage(new ImageToHash(img1),"kalle");
+        imgdao.addImage(new ImageToHash(img3),"kalle");
+        imgdao.addImage(new ImageToHash(img3),"kalle");
+        imgdao.addImage(new ImageToHash(img1),"kalle");
+        imgdao.addImage(new ImageToHash(img2),"kalle");
+        assertTrue(2==imgdao.addImage(new ImageToHash(img2),"kalle"));
     }
        
     

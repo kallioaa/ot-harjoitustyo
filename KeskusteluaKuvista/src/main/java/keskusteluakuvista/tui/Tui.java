@@ -7,13 +7,14 @@ package keskusteluakuvista.tui;
 
 import java.util.List;
 import java.util.Scanner;
-import keskusteluakuvista.ApplicationLogic;
+import keskusteluakuvista.logic.ApplicationLogic;
 
 /**
  *
  * @author aatukallio
  */
 public class Tui  {
+    /*
     private IO scanner;
     private ApplicationLogic logic;
             
@@ -58,11 +59,12 @@ public class Tui  {
         String url = scanner.nextLine();
         return logic.getImageID();
     }
-    
+    /*
     private void printComments() {
         List<String> chat = logic.showChat();
         this.scanner.print("\nKommentit:");
         chat.forEach(s -> scanner.print(s));
         System.out.println("");
     }
+*/
 }

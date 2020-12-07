@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package keskusteluakuvista;
+
+import keskusteluakuvista.gui.MainGui;
+
 /**
  *
  * @author aatukallio

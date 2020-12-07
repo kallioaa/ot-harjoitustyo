@@ -21,14 +21,13 @@ public class DaoChatTest {
     
     @Before
     public void setUp() {
-        Dao dao = new Dao("resourcesDb/testDb2.db",true);
-        this.chatdb = new DaoChat(dao.getConnection());
+        this.chatdb = DaoChat.getInstance();
     }
     
     @Test
     public void addChat() {
-        chatdb.addMessage(1, "Moikka miten menee");
-        chatdb.addMessage(1, "Erittain huonosti");
+        chatdb.addMessage(1, "Aatu Kallio","Hieno kuva");
+        chatdb.addMessage(1, "Aatu Kallio","Hieno kuva");
         assertTrue(2==chatdb.getMessages(1).size());
     }
     

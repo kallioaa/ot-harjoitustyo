@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import keskusteluakuvista.ImageToHash;
 
 /**
@@ -17,43 +19,82 @@ import keskusteluakuvista.ImageToHash;
  */
 public class DaoImages {
     
-    private Connection db;
+    private static DaoImages daoImages_instance;
+    private final Connection conn;
     
-    public DaoImages(Connection db) {
-        this.db = db;
+    
+    private DaoImages() {
+        this.conn = Dao.getInstance().conn;
     }
     
-    public Integer addImage(ImageToHash image) {
+    public static DaoImages getInstance() {
+        if (daoImages_instance == null) {
+            daoImages_instance = new DaoImages();
+        }
+        return daoImages_instance;
+    }
+    
+    public Integer addImage(ImageToHash image,String username) {
         Integer kuvanID = this.key(image);
         if (kuvanID != -1) {
             return kuvanID;
         }
         else {
             try {
-                PreparedStatement p  = db.prepareStatement("INSERT INTO Images (hashcode) VALUES (?)");
+                PreparedStatement p  = conn.prepareStatement("INSERT INTO Images (hashcode) VALUES (?)");
                 p.setInt(1, image.hashCode());
                 p.execute();
-                return this.numberOfRows();
+                Integer id = this.numberOfRows();
+                setHistory(id,username);
+                return id;
             } catch (SQLException e) {
-                System.out.println(e);
-                return null;
+                throw new RuntimeException(e);
             }  
         }
     }
     
+    private void setHistory(Integer id,String username) {
+        try {
+            PreparedStatement p  = conn.prepareStatement("INSERT INTO ImageHistory (id_image, username, created) VALUES (?, ?, CURRENT_TIMESTAMP)");
+            p.setInt(1, id);
+            p.setString(2, username);
+            p.execute();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
+    public List<String> getHistrory(Integer id) {
+        List<String> returnList = new ArrayList<>();
+        try {
+            PreparedStatement p  = conn.prepareStatement("SELECT id_image, username, created FROM ImageHistory WHERE id_image=?");
+            p.setInt(1, id);
+            ResultSet r = p.executeQuery();
+            if (r.next()) {
+                returnList.add(String.valueOf(r.getInt("id_image")));
+                returnList.add(String.valueOf(r.getString("username")));
+                returnList.add(r.getString("created"));
+            }
+            return returnList;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }   
+    }
+    
+    
     private Integer numberOfRows() {
         try {
-            PreparedStatement p  = db.prepareStatement("SELECT COUNT(*) FROM Images");
+            PreparedStatement p  = conn.prepareStatement("SELECT COUNT(*) FROM Images");
             return p.executeQuery().getInt(1);
                     
         } catch (SQLException e) {
-            return null;
+            throw new RuntimeException(e);
         }
     }
     
     private Integer key(ImageToHash image) {
         try {
-            PreparedStatement p  = db.prepareStatement("SELECT id FROM Images WHERE hashcode=?");
+            PreparedStatement p  = conn.prepareStatement("SELECT id FROM Images WHERE hashcode=?");
             p.setInt(1, image.hashCode());
             ResultSet r = p.executeQuery();
             if (r.next()) {

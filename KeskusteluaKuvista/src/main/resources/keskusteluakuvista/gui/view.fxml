@@ -9,18 +9,29 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="800" maxWidth="500" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="keskusteluakuvista.gui.Controller">
+<VBox alignment="CENTER" maxHeight="800" maxWidth="500" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="keskusteluakuvista.gui.ControllerMain">
    <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="Image">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Image information" />
-              <MenuItem mnemonicParsing="false" onAction="#onSearchImage" text="New image from URL" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
+      <HBox prefHeight="26.0" prefWidth="500.0">
+         <children>
+            <MenuBar prefHeight="29.0" prefWidth="423.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Image">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onSearchImage" text="New image from URL" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button mnemonicParsing="false" onAction="#logOutButton" prefHeight="32.0" prefWidth="96.0" text="Log out" textFill="#00a9f9">
+               <font>
+                  <Font name="Avenir Heavy" size="13.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
       <HBox alignment="CENTER" prefHeight="364.0" prefWidth="500.0">
          <children>
             <ImageView id="image" fx:id="image" fitHeight="347.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
@@ -33,6 +44,7 @@
             <Insets bottom="5.0" left="25.0" right="25.0" top="10.0" />
          </VBox.margin>
       </HBox>
+      <Label fx:id="imageHistory" alignment="CENTER" prefHeight="17.0" prefWidth="455.0" />
       <ScrollPane hbarPolicy="NEVER" prefHeight="376.0" prefWidth="500.0">
          <VBox.margin>
             <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
