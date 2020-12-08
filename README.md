@@ -2,21 +2,7 @@
 
 ## Ohjelman käyttöohje
 
-Voit kopioida ohjelmaan kuvien url-osoitteita netistä. Jotta ohjelma toimisi, katso että sivulla ei ole muuta kuin kuva ja kuvan osoite ei ole "data"-alkuinen. 
-
-## VIIKKO5
-
-Gui luotu. Ohelmasta puuttuu vielä käyttäjätunnuksien luominen.
-
-## VIIKKO4
-
-Tietokannat luotu viesteille sekä kuville, joten vanhat tapahtumat jää muistiin. Tekstikäyttöliittymän kautta pystyy kommentoimaan kuvia. Rakennetta refaktoroitu.
-
-
-## VIIKKO3
-
-Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertaiseen tekstikäyttöliittymään voi nyt antaa eri kuvien URL osoitteita, jonka jälkeen kuvista tallennetaan tietoa ja niille määrätään ID:t.
-
+Voit luoda ohjelmaan käyttäjätunnukset ja kirjautua sisään. Kirjauduttuasi pystyt liittämään tesktikenttään minkä tahansa ei "data"-alkuisen kuvan osoitteen ja näät sen avautuvan käyttöliittymään. Tiedot siitä, että käyttäjäsi on lisännyt ensimmäiseksi kuvan (rgb-arvoista generoidun hashkoodin) tiettynä ajanhetkenä (saattaa näyttää gmt +0 aikaa). Nyt voit kirjoittaa kuvaan kommentteja, jotka muut näkevät syöttäessään saman kuvan järjestelmään.
 ## 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
