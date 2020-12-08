@@ -24,10 +24,10 @@ public class Dao {
     
     private static Dao dao_instance;
     protected Connection conn;
-    private static String url = "resourcesDb/kkDatabase.db";
+    private static String url = "kkDatabase.db";
     
     private Dao() {
-        initializeDb(url);
+        initializeDb();
         try {
             this.conn = DriverManager.getConnection("jdbc:sqlite:" + url);
         } catch (SQLException e) {
@@ -50,7 +50,7 @@ public class Dao {
      * Sets up the database. Table initializations are read from tables.sql
      * @param url 
      */
-    public static void initializeDb(String url) {
+    public static void initializeDb() {
         try {
             File file = new File(url);
             if (!file.exists()) {

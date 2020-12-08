@@ -109,16 +109,20 @@ public class ControllerMain extends Controller implements Initializable {
         logic.resetSession();
         super.changeToLogin(event);        
     }
-
+    
+   //Function set ups the databases needed.
+    /**
+     * 
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         DaoImages imagesDao = DaoImages.getInstance();
         DaoChat chatsDao = DaoChat.getInstance();
         this.logic = ApplicationLogic.getInstance(imagesDao, chatsDao);
         try {
-            BufferedImage bImg = ImageIO.read(new File("testImages","startUp.png"));
-            Image image = SwingFXUtils.toFXImage(bImg, null);
-            this.image.setImage(image);
+            //BufferedImage bImg = ImageIO.read(new File("testImages","startUp.png"));
+            //Image image = SwingFXUtils.toFXImage(bImg, null);
+            //this.image.setImage(image);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
