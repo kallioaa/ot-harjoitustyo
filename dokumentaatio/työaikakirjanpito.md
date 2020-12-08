@@ -5,3 +5,5 @@
 | 24.11. | 12    | Tietokantoja ja keskustelupalstoja |
 | 28.11. | 3    | Gui |
 | 1.12. | 11    | Gui ja testejä |
+| 7.12. | 10    | Lisää tietokantoja ja 2 uutta näkymää. Salasanojen hash. |
+| 8.12. | 10    | Testejä ja korjailuja |
