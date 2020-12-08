@@ -5,13 +5,13 @@
  */
 package keskusteluakuvista.logic;
 
-import java.util.List;
 import keskusteluakuvista.database.DaoUsers;
 
 /**
  *
  * @author aatukallio
  */
+//This class contains the information about the 
 public class Session {
     
     private static Session session_instance;
@@ -25,6 +25,7 @@ public class Session {
         this.numberOfComments = numberOfComments;
     }
     
+    //Singleton constructor for session method. Never return null.
     public static Session getInstance(Integer userId, String username, Integer numberOfComments) {
         if (session_instance == null) {
             session_instance = new Session(userId,username,numberOfComments);
@@ -32,7 +33,7 @@ public class Session {
         return session_instance;
     }
     
-    
+    //return the instance without te need to supply constructor parameters. Can eturn null
     public static Session getInstance() {
         return session_instance;
     }
@@ -48,9 +49,24 @@ public class Session {
         return this.username;
     }
     
+    /*
+    public Integer getNumberOfComments() {
+        return this.numberOfComments;
+    }
+    
+    
     public int getUserId() {
         return this.userId;
     }
+    */
+    
+    /**
+     * Method is checks if the new user information is in a correct format. 
+     * @param username
+     * @param password
+     * @param passwordCheck
+     * @return 
+     */
     
     public static String createUser(String username, String password, String passwordCheck) {
         if (password.length() >= 8 && !password.contains("\\S")) {

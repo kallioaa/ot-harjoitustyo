@@ -11,21 +11,30 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import keskusteluakuvista.database.DaoChat;
+import keskusteluakuvista.database.DaoImages;
+import keskusteluakuvista.database.DaoUsers;
 
 /**
  *
  * @author aatukallio
  */
+
+//This class sets up the Gui.
 public class MainGui extends Application {
     
     private Stage primarystage;
     
     public static void main(String[] args) {
+        
         Application.launch(args);  
     }
     
     @Override
     public void start(Stage primarystage) throws Exception {
+        DaoImages.getInstance();
+        DaoChat.getInstance();
+        DaoUsers.getInstance();
         this.primarystage = primarystage;
         Parent root = FXMLLoader.load(getClass().getResource("loginView.fxml"));
         primarystage.setTitle("ImageChatter");

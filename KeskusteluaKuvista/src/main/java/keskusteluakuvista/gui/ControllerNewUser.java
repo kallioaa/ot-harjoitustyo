@@ -27,11 +27,13 @@ public class ControllerNewUser extends Controller {
     @FXML
     private Label passwordMsg;
     
+    //Changes the view back to log in.
     @FXML
     void backToLogin(ActionEvent event) throws IOException {
         super.changeToLogin(event);
     }
-            
+    
+    //Functionality for pressing the new user button. Displays the error message if the new user information are in a wrong format.
     @FXML
     void createNewUser(ActionEvent event) throws IOException {
        String retString = Session.createUser(username.getText(), password.getText(), repeatPassword.getText());

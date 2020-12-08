@@ -14,12 +14,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 /**
- *
+ * Common methods for different Controllers. These provide the functionality for changing the view.
  * @author aatukallio
  */
 public abstract class Controller {
 
-    void changeToMain(ActionEvent event) throws IOException {
+    protected void changeToMain(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("view.fxml"));
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -27,7 +27,7 @@ public abstract class Controller {
         window.show();
     }
     
-    void changeToNewUser(ActionEvent event) throws IOException {
+    protected void changeToNewUser(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("newUserView.fxml"));
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -35,7 +35,7 @@ public abstract class Controller {
         window.show();
     }
     
-    void changeToLogin(ActionEvent event) throws IOException {
+    protected void changeToLogin(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(this.getClass().getResource("loginView.fxml"));
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

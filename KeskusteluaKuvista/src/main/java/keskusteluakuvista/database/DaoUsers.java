@@ -26,6 +26,26 @@ public class DaoUsers {
         this.conn = Dao.getInstance().conn;
     }
     
+    private DaoUsers(Connection conn) {
+        this.conn = conn;
+    }
+    
+    /**
+     * Singleton constructor for DaoUsers. Used by test classes.
+     * @param conn Connection object
+     * @return 
+     */
+    public static DaoUsers getInstance(Connection conn) {
+        if (daoUsers_instance == null) {
+            daoUsers_instance = new DaoUsers(conn);
+        }
+        return daoUsers_instance;
+    }
+    
+    /**
+     * Singleton constructor for DaoUsers.
+     * @return 
+     */
     public static DaoUsers getInstance() {
         if (daoUsers_instance == null) {
             daoUsers_instance = new DaoUsers();
@@ -33,7 +53,12 @@ public class DaoUsers {
         return daoUsers_instance;
     }
         
-    
+    /**
+     * Check's if the account exists. 
+     * @param username Session's user
+     * @param password user's password
+     * @return 
+     */
     public boolean login(String username, String password) {
         try {   
             PreparedStatement p = conn.prepareStatement("SELECT id, passHashed, nOfComments from Users where username=?");
@@ -50,7 +75,12 @@ public class DaoUsers {
             throw new RuntimeException(e);
         }
     }
-    
+    /**
+     * Tries to create a new user to the database. 
+     * @param username 
+     * @param password
+     * @return Returns True if new user is created. False if there already exists an user with this username.
+     */
     public boolean addAccount(String username,String password) {
         if (this.contains(username)) {
             return false;

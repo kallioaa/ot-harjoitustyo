@@ -15,7 +15,7 @@ import keskusteluakuvista.ImageToHash;
 
 /**
  *
- * @author aatukallio
+ * Communicates with the database tables for image attributes.
  */
 public class DaoImages {
     
@@ -27,13 +27,39 @@ public class DaoImages {
         this.conn = Dao.getInstance().conn;
     }
     
+    private DaoImages(Connection conn) {
+        this.conn = conn;
+    }
+    
+    /**
+    * Singleton constructor for DaoImages.
+    * @author aatukallio
+    */
     public static DaoImages getInstance() {
         if (daoImages_instance == null) {
             daoImages_instance = new DaoImages();
         }
         return daoImages_instance;
     }
+    /**
+     * Singleton constructor for DaoImages. Used by test classes.
+     * @param conn Connection object
+     * @return 
+     */
+    public static DaoImages getInstance(Connection conn) {
+        if (daoImages_instance == null) {
+            daoImages_instance = new DaoImages(conn);
+        }
+        return daoImages_instance;
+    }
     
+    /**
+    * Function adds an image to the database if it does not exist.
+     * @param image ImageToHash object
+     * @param username session's user
+     * @return Pictures ID (key in database)
+    */
+    //Function adds an image to the database if it does not exist.
     public Integer addImage(ImageToHash image,String username) {
         Integer kuvanID = this.key(image);
         if (kuvanID != -1) {
@@ -53,6 +79,12 @@ public class DaoImages {
         }
     }
     
+    /**
+     * Function set the history data for given image.
+     * @param id Pictures key in Images table
+     * @param username User of the session
+     */
+    
     private void setHistory(Integer id,String username) {
         try {
             PreparedStatement p  = conn.prepareStatement("INSERT INTO ImageHistory (id_image, username, created) VALUES (?, ?, CURRENT_TIMESTAMP)");
@@ -64,6 +96,11 @@ public class DaoImages {
         }
     }
     
+    /**
+     * Function returns the history data of the image.
+     * @param id Pictures key in Images table
+     * @return 
+     */
     public List<String> getHistrory(Integer id) {
         List<String> returnList = new ArrayList<>();
         try {
@@ -81,7 +118,10 @@ public class DaoImages {
         }   
     }
     
-    
+
+    /**
+     * @return Function return the number of images in the database.
+     */
     private Integer numberOfRows() {
         try {
             PreparedStatement p  = conn.prepareStatement("SELECT COUNT(*) FROM Images");
@@ -92,6 +132,12 @@ public class DaoImages {
         }
     }
     
+    //Returns the id of a image if it exists in the database. Else, returns -1
+    /**
+     * Return the id of a certain image in the database. If it does not exists, returns -1.
+     * @param image ImageToHash object
+     * @return Integer
+     */
     private Integer key(ImageToHash image) {
         try {
             PreparedStatement p  = conn.prepareStatement("SELECT id FROM Images WHERE hashcode=?");

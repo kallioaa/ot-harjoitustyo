@@ -28,7 +28,7 @@ public class ControllerLogin extends Controller {
     @FXML
     private PasswordField password;  
     
-
+    //Functionality for pressing the log in button
     @FXML
     void logInAttempt(ActionEvent event) throws IOException {
         Boolean success = Session.SignIn(this.username.getText(), this.password.getText());
@@ -41,7 +41,7 @@ public class ControllerLogin extends Controller {
         }
     }
     
-    
+    //Changes the the view to new user creation.
     @FXML
     void newUserButton(ActionEvent event) throws IOException {
         super.changeToNewUser(event);

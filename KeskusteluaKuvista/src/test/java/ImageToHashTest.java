@@ -39,8 +39,6 @@ public class ImageToHashTest {
             t.add(new ImageToHash(ImageIO.read(new File("testImages","image" + i + ".jpeg"))));
         }
         this.images = t;
-        
-
     }
     
     @Test

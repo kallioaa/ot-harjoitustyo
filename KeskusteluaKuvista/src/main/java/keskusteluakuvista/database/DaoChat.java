@@ -28,6 +28,10 @@ public class DaoChat {
         this.conn = Dao.getInstance().conn;
     }
     
+    /**
+     * Singleton constructor for DaoChat.
+     * @return DaoChat object
+     */
     public static DaoChat getInstance() {
         if (daoChat_instance == null) {
             daoChat_instance = new DaoChat();
@@ -35,6 +39,12 @@ public class DaoChat {
         return daoChat_instance;
     }
    
+    /**
+     * Function adds a message to message table for given image
+     * @param id image id
+     * @param username Session's user
+     * @param text Message from the user
+     */
     public void addMessage(Integer id,String username, String text) {
         try {
             PreparedStatement p  = conn.prepareStatement("INSERT INTO Messages (id_image, message, username, created) VALUES (?, ?, ?, CURRENT_TIMESTAMP)");
@@ -47,7 +57,12 @@ public class DaoChat {
         }
     }
     
-    
+    //Runction returns the messages for given image_id
+    /**
+     * Method returns the messages for given image_id
+     * @param id image id
+     * @return Message information: username,timestamp and the message
+     */
     public List<List<String>> getMessages(Integer id) {
         List<List<String>> palautus = new ArrayList<>();
         List<String> t;

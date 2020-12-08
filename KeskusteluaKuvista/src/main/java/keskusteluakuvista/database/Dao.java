@@ -24,26 +24,33 @@ public class Dao {
     
     private static Dao dao_instance;
     protected Connection conn;
-    private String url;
+    private static String url = "resourcesDb/kkDatabase.db";
     
     private Dao() {
-        this.url = "resourcesDb/kkDatabase.db";
-        this.initializeDb();
+        initializeDb(url);
         try {
             this.conn = DriverManager.getConnection("jdbc:sqlite:" + url);
         } catch (SQLException e) {
-            System.out.println(e);;
+            System.out.println(e);
         }
     }
     
+    /**
+     * Singleton constructor for Dao.
+     * @return Dao class instance
+     */
     public static Dao getInstance() {
         if (dao_instance == null) {
             dao_instance = new Dao();
         }
         return dao_instance;
     }   
-
-    private void initializeDb() {
+    
+    /**
+     * Sets up the database. Table initializations are read from tables.sql
+     * @param url 
+     */
+    public static void initializeDb(String url) {
         try {
             File file = new File(url);
             if (!file.exists()) {

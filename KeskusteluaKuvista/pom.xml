@@ -60,7 +60,8 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>keskusteluakuvista/UI/*</exclude>
+                        <exclude>keskusteluakuvista/tui/*</exclude>
+                        <exclude>keskusteluakuvista/gui/*</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -71,6 +72,14 @@
                         </goals>
                     </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    ...
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
