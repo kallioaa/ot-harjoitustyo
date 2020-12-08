@@ -6,6 +6,13 @@ Voit luoda ohjelmaan käyttäjätunnukset ja kirjautua sisään. Kirjauduttuasi 
 
 Pystyt nollaamaan tietokannan poistamalla resourcesDb kansiosta tiedoston kkDatabase.mv.db. Tämä kannattaa suorittaa testien testaamisen jälkeen, jotta ensimmäinen lisäämäsi kuva saa id-arvokseen 0.
 
+Suoritettavissa oleva jar-tiedoston saa komennolla.
+
+```
+mvn clean compile assembly:single
+```
+
+
 ## Määrittelydokumentin toiminnallisuudesta toteutettu
 
 - Käyttöliittymä [x] 
