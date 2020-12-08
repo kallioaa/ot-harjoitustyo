@@ -2,22 +2,25 @@
 
 ## Ohjelman käyttöohje
 
-Voit kopioida ohjelmaan kuvien url-osoitteita netistä. Jotta ohjelma toimisi, katso että sivulla ei ole muuta kuin kuva ja kuvan osoite ei ole "data"-alkuinen. 
+Voit luoda ohjelmaan käyttäjätunnukset ja kirjautua sisään. Kirjauduttuasi pystyt liittämään tesktikenttään minkä tahansa ei "data"-alkuisen kuvan osoitteen ja näät sen avautuvan käyttöliittymään. Tiedot siitä, että käyttäjäsi on lisännyt ensimmäiseksi kuvan (rgb-arvoista generoidun hashkoodin) tiettynä ajanhetkenä (saattaa näyttää gmt +0 aikaa). Nyt voit kirjoittaa kuvaan kommentteja, jotka muut näkevät syöttäessään saman kuvan järjestelmään.
 
-## VIIKKO5
+Pystyt nollaamaan tietokannan poistamalla resourcesDb kansiosta tiedoston kkDatabase.mv.db. Tämä kannattaa suorittaa testien testaamisen jälkeen, jotta ensimmäinen lisäämäsi kuva saa id-arvokseen 0.
 
-Gui luotu. Ohelmasta puuttuu vielä käyttäjätunnuksien luominen.
+Suoritettavissa oleva jar-tiedoston saa komennolla.
 
-## VIIKKO4
+```
+mvn clean compile assembly:single
+```
 
-Tietokannat luotu viesteille sekä kuville, joten vanhat tapahtumat jää muistiin. Tekstikäyttöliittymän kautta pystyy kommentoimaan kuvia. Rakennetta refaktoroitu.
 
+## Määrittelydokumentin toiminnallisuudesta toteutettu
 
-## VIIKKO3
+- Käyttöliittymä [x] 
+- Kuvien lisääminen tietokantaan [x]
+- Viestien lisääminen tietokantaan [x] 
+- admin käyttäjä, jota en todennäköisesti toteuta []
+- Kuvan hakeminen id perusteella []
 
-Sovelluksen luokkiin luotu jotain toiminnallisuutta sekä testejä. Yksinkertaiseen tekstikäyttöliittymään voi nyt antaa eri kuvien URL osoitteita, jonka jälkeen kuvista tallennetaan tietoa ja niille määrätään ID:t.
-
-## 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
 [Työaikakirjanoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
