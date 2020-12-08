@@ -11,6 +11,8 @@ Pystyt nollaamaan tietokannan poistamalla resourcesDb kansiosta tiedoston kkData
 - Käyttöliittymä [x] 
 - Kuvien lisääminen tietokantaan [x]
 - Viestien lisääminen tietokantaan [x] 
+- admin käyttäjä, jota en todennäköisesti toteuta []
+- Kuvan hakeminen id perusteella []
 
 [Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
