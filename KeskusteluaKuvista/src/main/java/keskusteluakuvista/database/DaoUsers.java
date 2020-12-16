@@ -6,10 +6,11 @@
 package keskusteluakuvista.database;
 
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import keskusteluakuvista.logic.Session;
+import entities.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
@@ -17,100 +18,105 @@ import org.mindrot.jbcrypt.BCrypt;
  * @author aatukallio
  */
 public class DaoUsers {
-    
-    private static DaoUsers daoUsers_instance;
-    private final Connection conn;
-    
-    
-    private DaoUsers() {
-        this.conn = Dao.getInstance().conn;
+   
+    private final Dao dao;
+      
+    public DaoUsers(Dao dao) {
+        this.dao = dao;
     }
-    
-    private DaoUsers(Connection conn) {
-        this.conn = conn;
-    }
-    
-    /**
-     * Singleton constructor for DaoUsers. Used by test classes.
-     * @param conn Connection object
-     * @return 
-     */
-    public static DaoUsers getInstance(Connection conn) {
-        if (daoUsers_instance == null) {
-            daoUsers_instance = new DaoUsers(conn);
-        }
-        return daoUsers_instance;
-    }
-    
-    /**
-     * Singleton constructor for DaoUsers.
-     * @return 
-     */
-    public static DaoUsers getInstance() {
-        if (daoUsers_instance == null) {
-            daoUsers_instance = new DaoUsers();
-        }
-        return daoUsers_instance;
-    }
-        
+     
     /**
      * Check's if the account exists. 
-     * @param username Session's user
+     * @param username UserSession's user
      * @param password user's password
      * @return 
      */
-    public boolean login(String username, String password) {
-        try {   
-            PreparedStatement p = conn.prepareStatement("SELECT id, passHashed, nOfComments from Users where username=?");
+    public User logIn(String username, String password) {
+        String selectString = "SELECT id, passHashed, nOfComments, loggedIn from Users where username=?";
+        User user = null;
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
+             PreparedStatement p = conn.prepareStatement(selectString)){   
             p.setString(1, username);
-            ResultSet r = p.executeQuery();
-            while (r.next()) {
-                if (BCrypt.checkpw(password, r.getString("passHashed"))){
-                    Session.getInstance(r.getInt("id"),username,r.getInt("nOfComments"));
-                    return true;
+            try (ResultSet r = p.executeQuery()) {
+                while (r.next()) {
+                    if (BCrypt.checkpw(password, r.getString("passHashed")) & r.getInt("loggedIn") == 0){
+                        user = new User(r.getInt("id"),username,r.getInt("nOfComments"));
+                        
+                    }
                 }
             }
-            return false;
+            if (user != null) {
+                changeStatus(user,1,conn);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return user;
+    }
+    
+    public void logOut(User user) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())) {
+            changeStatus(user,0,conn);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    
+    }
+    
+    private void changeStatus(User user, Integer status, Connection conn) {
+        String updateString = "UPDATE Users SET loggedIn=? where username=?";
+        try (PreparedStatement p = conn.prepareStatement(updateString)) { 
+            p.setInt(1, status);
+            p.setString(2, user.getUsername());
+            p.execute();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+    
     /**
      * Tries to create a new user to the database. 
      * @param username 
      * @param password
      * @return Returns True if new user is created. False if there already exists an user with this username.
      */
-    public boolean addAccount(String username,String password) {
-        if (this.contains(username)) {
-            return false;
-        }
-        try {
-            String salt = BCrypt.gensalt();
-            password = BCrypt.hashpw(password, salt);
-            PreparedStatement p = conn.prepareStatement("INSERT INTO Users (username, passHashed, salt, nOfComments) VALUES (?, ?, ?, ?)");
-            p.setString(1, username);
-            p.setString(2, password);
-            p.setString(3, salt);
-            p.setInt(4, 0);
-            p.execute();
-            return true;
+    public boolean addAccount(String username, String password) {
+        boolean accountAdded = false;
+        String insertString = "INSERT INTO Users (username, passHashed, salt, nOfComments, loggedIn) VALUES (?, ?, ?, ?, ?)";
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())){ 
+            if (!contains(username,conn)) {
+                try (PreparedStatement p  = conn.prepareStatement(insertString)) {
+                    String salt = BCrypt.gensalt();
+                    password = BCrypt.hashpw(password, salt);           
+                    p.setString(1, username);
+                    p.setString(2, password);
+                    p.setString(3, salt);
+                    p.setInt(4, 0);
+                    p.setInt(5, 0);
+                    p.execute();
+                    accountAdded = true;
+                }
+            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return accountAdded;
     }
     
-    private boolean contains(String username) {
-        try {
-            PreparedStatement p  = conn.prepareStatement("SELECT * FROM Users WHERE username=?");
+    private boolean contains(String username, Connection conn) {
+        String selectString = "SELECT * FROM Users WHERE username=?";
+        boolean contains = false;
+        
+        try (PreparedStatement p  = conn.prepareStatement(selectString)){
             p.setString(1, username);
-            ResultSet r = p.executeQuery();
-            if (r.next()) {
-                return true;
+            try (ResultSet r = p.executeQuery()) {
+                if (r.next()) {
+                contains = true;
+                }
             }
-            return false;            
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return contains;
     }
 }

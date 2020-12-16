@@ -15,6 +15,7 @@ import java.sql.*;
 import java.sql.DriverManager;
 import java.util.List;
 import java.util.stream.Collectors;
+import org.apache.commons.dbutils.DbUtils;
 
 /**
  *
@@ -22,49 +23,45 @@ import java.util.stream.Collectors;
  */
 public class Dao {
     
-    private static Dao dao_instance;
-    protected Connection conn;
-    private static String url = "kkDatabase.db";
+    private final String dbUrl = "kkDatabase.db";
+    private final String dbUsername = "imageChatterApp";
+    private final String dbPassword = "ax756f89C";
     
-    private Dao() {
+    public Dao() {
         initializeDb();
-        try {
-            this.conn = DriverManager.getConnection("jdbc:sqlite:" + url);
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
+    }
+    
+    public String getdbUrl() {
+        return this.dbUrl;
+    }
+    
+    public String getdbUsername() {
+        return this.dbUsername;
+    }
+    
+    public String getdbPassword() {
+        return this.dbPassword;
     }
     
     /**
-     * Singleton constructor for Dao.
-     * @return Dao class instance
-     */
-    public static Dao getInstance() {
-        if (dao_instance == null) {
-            dao_instance = new Dao();
-        }
-        return dao_instance;
-    }   
-    
-    /**
      * Sets up the database. Table initializations are read from tables.sql
-     * @param url 
      */
-    public static void initializeDb() {
+    public void initializeDb() {
         try {
-            File file = new File(url);
+            File file = new File(dbUrl);
             if (!file.exists()) {
                 InputStream luontiLauseetStream = Dao.class.getResourceAsStream("tables.sql");
                 List<String> fileLines = new BufferedReader(new InputStreamReader(luontiLauseetStream, StandardCharsets.UTF_8)).lines().collect(Collectors.toList());
-                Connection db = DriverManager.getConnection("jdbc:sqlite:" + url);
-                Statement s = db.createStatement();
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dbUrl, this.dbUsername,this.dbPassword);
+                Statement s = conn.createStatement();
                 for (String command:fileLines) {
                     s.execute(command);
                 }
+                DbUtils.closeQuietly(s);
+                DbUtils.closeQuietly(conn);
             }    
-        } catch (Exception e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 }

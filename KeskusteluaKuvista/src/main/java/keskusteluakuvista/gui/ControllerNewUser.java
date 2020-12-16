@@ -11,9 +11,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import keskusteluakuvista.logic.Session;
+import keskusteluakuvista.logic.UserLogic;
 
-public class ControllerNewUser extends Controller {
+public class ControllerNewUser{
+    
+    private UserLogic userLogic;
+    private Controller controller;
 
     @FXML
     private TextField username;
@@ -30,22 +33,27 @@ public class ControllerNewUser extends Controller {
     //Changes the view back to log in.
     @FXML
     void backToLogin(ActionEvent event) throws IOException {
-        super.changeToLogin(event);
+        controller.changeToLogin(event);
     }
     
     //Functionality for pressing the new user button. Displays the error message if the new user information are in a wrong format.
     @FXML
     void createNewUser(ActionEvent event) throws IOException {
-       String retString = Session.createUser(username.getText(), password.getText(), repeatPassword.getText());
+       String retString = userLogic.createUser(username.getText(), password.getText(), repeatPassword.getText());
       
        username.clear();
        password.clear();
        repeatPassword.clear();
        
        if (retString.equals("Success")) {
-           super.changeToLogin(event);   
+           controller.changeToLogin(event);   
        }
        passwordMsg.setText(retString);
+    }
+    
+    void setUp(UserLogic userLogic,Controller controller) {
+        this.userLogic = userLogic;
+        this.controller = controller;
     }
 }
 

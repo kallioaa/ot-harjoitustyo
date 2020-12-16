@@ -3,6 +3,7 @@ package databaseTests;
 
 import java.io.File;
 import java.util.List;
+import keskusteluakuvista.database.Dao;
 import keskusteluakuvista.database.DaoChat;
 import org.junit.After;
 import static org.junit.Assert.assertArrayEquals;
@@ -24,36 +25,46 @@ import org.junit.Test;
 
 public class DaoChatTest {
     
+    private static Dao dao;
     private static DaoChat chatdb;
-    
-    
-    @BeforeClass
-    public static void setUp() {
-        chatdb = DaoChat.getInstance();
-        chatdb.addMessage(1, "Aatu Kallio","Hieno kuva");
-        chatdb.addMessage(2, "George","Hieno juttu");
-        chatdb.addMessage(2, "Spiderman and elsa","Hieno tuttu");
-        chatdb.addMessage(3, "Jeejee","Hieno muttu");
-        chatdb.addMessage(3, "Jeejee","Hieno muttu");
-        chatdb.addMessage(5, "Spiderman","Hieno kuva");
-        chatdb.addMessage(2, "Spiderman and elsa","Cool");
-        chatdb.addMessage(5, "Aatu Kallio","Hieno kuva");
         
+    @BeforeClass
+    public static void setUpClass() {
+        dao = new Dao();
+        chatdb = new DaoChat(dao);
     }
     
     @Test
     public void correctNumberOfChatIdOne() {
+        chatdb.addMessage(1, "Aatu Kallio","Hieno kuva");
         assertEquals(1,chatdb.getMessages(1).size());
     }
     
+    
     @Test
-    public void correctNumberOfChatIdTwo() {
-        assertEquals(3,chatdb.getMessages(2).size());
+    public void correctNumberOfmessagesIdTwo() {
+        chatdb.addMessage(1, "Aatu Kallio","Hieno kuva");
+        chatdb.addMessage(2, "Kauhea kuva","Hieno kuva");
+        chatdb.addMessage(1, "Aatu Kallio","ei hyvä");
+        chatdb.addMessage(2, "Aatu Kallio","Hieno kuva");
+        assertEquals(2,chatdb.getMessages(1).size());
     }
     
     @Test
     public void chatContainsMessage() {
+        chatdb.addMessage(3, "Aatu Kallio","jeejee");
+        chatdb.addMessage(3, "Kauhea kuva","Hieno kuva");
+        chatdb.addMessage(3, "Aatu Kallio","ei hyvä");
         List<List<String>> pictureTwoChat = chatdb.getMessages(3);
-        assertArrayEquals(new String[]{"Jeejee","Hieno muttu"},new String[]{pictureTwoChat.get(0).get(0),pictureTwoChat.get(0).get(2)});
+        assertArrayEquals(new String[]{"Aatu Kallio","jeejee"},new String[]{pictureTwoChat.get(0).get(0),pictureTwoChat.get(0).get(2)});
     } 
+    
+    
+    @After
+    public void clean() {
+        File myObj = new File("kkDatabase.db");
+        myObj.delete();
+        dao.initializeDb();
+    }
 }
+

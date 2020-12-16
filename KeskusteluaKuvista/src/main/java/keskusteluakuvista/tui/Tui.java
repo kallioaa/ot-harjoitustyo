@@ -7,7 +7,7 @@ package keskusteluakuvista.tui;
 
 import java.util.List;
 import java.util.Scanner;
-import keskusteluakuvista.logic.ApplicationLogic;
+//import keskusteluakuvista.logic.ApplicationLogic;
 
 /**
  *

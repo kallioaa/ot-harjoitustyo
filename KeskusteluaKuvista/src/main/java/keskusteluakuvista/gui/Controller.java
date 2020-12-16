@@ -12,15 +12,34 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import keskusteluakuvista.logic.ChatLogic;
+import keskusteluakuvista.logic.ImageLogic;
+import keskusteluakuvista.logic.UserLogic;
 
 /**
  * Common methods for different Controllers. These provide the functionality for changing the view.
  * @author aatukallio
  */
-public abstract class Controller {
-
+public class Controller {
+    
+    UserLogic userLogic;
+    ImageLogic imageLogic;
+    ChatLogic chatLogic;
+    
+    
+    public Controller(UserLogic userLogic, ImageLogic imageLogic, ChatLogic chatLogic)  {
+        this.userLogic = userLogic;
+        this.imageLogic = imageLogic;
+        this.chatLogic = chatLogic;
+    }
+      
     protected void changeToMain(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("view.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("view.fxml"));
+        Parent root = loader.load();
+
+        ControllerMain controller = loader.getController();
+        controller.setUp(userLogic, imageLogic, chatLogic, this);
+        
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
@@ -28,7 +47,12 @@ public abstract class Controller {
     }
     
     protected void changeToNewUser(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("newUserView.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("newUserView.fxml"));
+        Parent root = loader.load();
+
+        ControllerNewUser controller = loader.getController();
+        controller.setUp(userLogic, this);
+        
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
@@ -36,7 +60,12 @@ public abstract class Controller {
     }
     
     protected void changeToLogin(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(this.getClass().getResource("loginView.fxml"));
+        FXMLLoader loader = new FXMLLoader(this.getClass().getResource("loginView.fxml"));
+        Parent root = loader.load();
+
+        ControllerLogin controller = loader.getController();
+        controller.setUp(userLogic, this);
+        
         Scene tableViewScene = new Scene(root);
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);

@@ -1,5 +1,4 @@
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,7 +7,7 @@ import java.util.List;
 import java.util.ListIterator;
 import javax.imageio.ImageIO;
 import junit.framework.Assert;
-import keskusteluakuvista.ImageToHash;
+import entities.ImageToHash;
 import keskusteluakuvista.database.Dao;
 import keskusteluakuvista.database.DaoImages;
 import static org.junit.Assert.*;
@@ -33,7 +32,7 @@ public class ImageToHashTest {
     private List<ImageToHash> images;
     
     @Before
-    public void setUp() throws IOException {
+    public void setUp() throws Exception {
         List<ImageToHash> t = new ArrayList<>();
         for (int i=1;i<=16;i++) {
             t.add(new ImageToHash(ImageIO.read(new File("testImages","image" + i + ".jpeg"))));

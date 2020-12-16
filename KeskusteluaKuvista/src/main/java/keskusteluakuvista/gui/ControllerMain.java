@@ -6,7 +6,6 @@
 package keskusteluakuvista.gui;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,13 +23,19 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javax.imageio.ImageIO;
-import keskusteluakuvista.logic.ApplicationLogic;
-import keskusteluakuvista.database.DaoChat;
-import keskusteluakuvista.database.DaoImages;
+import keskusteluakuvista.logic.ChatLogic;
+import keskusteluakuvista.logic.ImageLogic;
+import keskusteluakuvista.logic.UserLogic;
 
-public class ControllerMain extends Controller implements Initializable {
+
+public class ControllerMain implements Initializable {
     
-    private ApplicationLogic logic;
+    private UserLogic userLogic;
+    private ImageLogic imageLogic;
+    private ChatLogic chatLogic;
+
+    private Controller controller;
+    
     
     @FXML
     private Label imageHistory;
@@ -48,34 +53,43 @@ public class ControllerMain extends Controller implements Initializable {
      * Loads the image from given URL and displays it int the GUI main view
      * @param url 
      */
-    private void loadImage(String url) {
+    private void loadImage() {
+        Image currentNetImage = null;
+        BufferedImage bImg = null;
         try {
-            BufferedImage bImg = null;
-            bImg = ImageIO.read(new URL(url));
-            Image image = SwingFXUtils.toFXImage(bImg, null);
-            this.image.setImage(image);
+            if (imageLogic.getBufImage() != null) {
+                currentNetImage = SwingFXUtils.toFXImage(imageLogic.getBufImage(), null);
+            } else {
+                bImg = ImageIO.read(getClass().getResourceAsStream("wrongFormat.png"));
+                currentNetImage = SwingFXUtils.toFXImage(bImg, null);
+            }
+            image.setImage(currentNetImage);
 
-        } catch (Exception e) {
-            System.out.println(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
     private List<String> setUpChatList(List<List<String>> chat) {
         List<String> returnList = new ArrayList<>();
-        for (List<String> message: chat) {
+        chat.forEach(message -> {
             returnList.add("<" + message.get(0) + ", " + message.get(1) + "> " + message.get(2));
-        }
+        });
         return returnList;
     }
     
     //Method formats the list recieved from ApplicationLogic to desired format
     private String setUpHistory(List<String> history) {
-        return "<" + history.get(0) + ", " + history.get(1) + ", " + history.get(2) + ">";
+        if (imageLogic.getBufImage() != null)
+            return "<" + history.get(0) + ", " + history.get(1) + ", " + history.get(2) + ">";
+        else {
+            return "";
+        }
     }
     
     //Sets the chat for the main window
-    void setChat() {   
-        List<String> chat = setUpChatList(this.logic.showChat());
+    private void setChat() {   
+        List<String> chat = setUpChatList(this.chatLogic.showChat());
         ObservableList<String> messages = FXCollections.observableArrayList(chat);
         this.all_messages.setItems(messages);
     }  
@@ -85,18 +99,16 @@ public class ControllerMain extends Controller implements Initializable {
     void onSearchImage(ActionEvent event) {
         String url = this.tf_message.getText();
         this.tf_message.clear();
-        this.logic.searchImageID(url);
-        if (this.logic.getImageID()!= null) {
-            this.imageHistory.setText(setUpHistory(this.logic.getImageHistory()));
-            this.loadImage(url);
-        }
+        this.imageLogic.searchImageID(url);
+        this.imageHistory.setText(setUpHistory(this.imageLogic.getImageHistory()));
+        this.loadImage();
         this.setChat();
     }
     
     //Functionality when pressing the send button.
     @FXML
     void onSendClick(ActionEvent event) {
-        logic.addMessage(this.tf_message.getText());
+        chatLogic.addMessage(this.tf_message.getText());
         this.setChat();
         this.tf_message.clear();
     }
@@ -106,24 +118,29 @@ public class ControllerMain extends Controller implements Initializable {
      */
     @FXML
     void logOutButton(ActionEvent event) throws IOException {
-        logic.resetSession();
-        super.changeToLogin(event);        
+        userLogic.logOut();
+        controller.changeToLogin(event);        
     }
     
+    void setUp(UserLogic userLogic, ImageLogic imagesLogic, ChatLogic chatLogic, Controller controller) {
+        this.userLogic = userLogic;
+        this.imageLogic = imagesLogic;
+        this.chatLogic = chatLogic;
+        this.controller = controller;
+    }
    //Function set ups the databases needed.
     /**
      * 
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        DaoImages imagesDao = DaoImages.getInstance();
-        DaoChat chatsDao = DaoChat.getInstance();
-        this.logic = ApplicationLogic.getInstance(imagesDao, chatsDao);
         try {
-            //BufferedImage bImg = ImageIO.read(new File("testImages","startUp.png"));
-            //Image image = SwingFXUtils.toFXImage(bImg, null);
-            //this.image.setImage(image);
-        } catch (Exception e) {
+            BufferedImage bImg = ImageIO.read(getClass().getResourceAsStream("startUp_1.png"));
+            Image currentNetImage = SwingFXUtils.toFXImage(bImg, null);
+            this.image.setImage(currentNetImage);
+        } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }

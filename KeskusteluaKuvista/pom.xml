@@ -7,6 +7,11 @@
     <packaging>jar</packaging>
     <dependencies>
             <dependency>
+                <groupId>org.sejda.webp-imageio</groupId>
+                <artifactId>webp-imageio-sejda</artifactId>
+                <version>0.1.0</version>
+            </dependency>
+            <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
@@ -17,6 +22,27 @@
                 <artifactId>sqlite-jdbc</artifactId>
                 <version>3.15.1
                 </version>
+            </dependency>
+            <dependency>
+                <groupId>com.twelvemonkeys.imageio</groupId>
+                <artifactId>imageio-bmp</artifactId>
+                <version>3.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>com.twelvemonkeys.imageio</groupId>
+                <artifactId>imageio-core</artifactId>
+                <version>3.3.2</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-dbutils</groupId>
+                <artifactId>commons-dbutils</artifactId>
+                <version>1.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-all</artifactId>
+                <version>1.10.19</version>
+                <scope>test</scope>
             </dependency>
             <dependency>
                 <groupId>org.openjfx</groupId>

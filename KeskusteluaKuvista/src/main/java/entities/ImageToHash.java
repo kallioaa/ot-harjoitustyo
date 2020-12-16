@@ -3,24 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package keskusteluakuvista;
+package entities;
 
 import java.awt.image.BufferedImage;
 import java.util.Arrays;
-import java.util.Objects;
 
 /**
- * ImageToHash takes a BufferedImage in the constructor and creates an object with an "uniue" hash ot of it.
+ * ImageToHash takes a BufferedImage in the constructor and creates an object with an "unique" hash of of it.
+ * 
  */
 public class ImageToHash {
-    private int[] pixels;
-    private Integer height;
-    private Integer width;
+    private final int[] pixels;
     
-    public ImageToHash(BufferedImage image) {
-        this.pixels = image.getRGB(0, 0, image.getWidth(), image.getHeight(), null, 0, image.getWidth());
+    public ImageToHash(BufferedImage img) throws Exception {
+        this.pixels = img.getRGB(0, 0, img.getWidth(), img.getHeight(), null, 0, img.getWidth());   
     }
-    
+          
     @Override
     public boolean equals(Object o) {
         // self check
@@ -36,12 +34,6 @@ public class ImageToHash {
             return false;
         }
         ImageToHash img = (ImageToHash) o;
-        if (!Objects.equals(this.height, img.height)) {
-            return false;
-        }
-        if (!Objects.equals(this.width, img.width)) {
-            return false;
-        }
         return img.pixels.equals(this.pixels); 
     }
     
