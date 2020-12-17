@@ -37,14 +37,7 @@ public class DaoUsers {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
              PreparedStatement p = conn.prepareStatement(selectString)){   
             p.setString(1, username);
-            try (ResultSet r = p.executeQuery()) {
-                while (r.next()) {
-                    if (BCrypt.checkpw(password, r.getString("passHashed")) & r.getInt("loggedIn") == 0){
-                        user = new User(r.getInt("id"),username,r.getInt("nOfComments"));
-                        
-                    }
-                }
-            }
+            user = checkPassword(username, password, p);
             if (user != null) {
                 changeStatus(user,1,conn);
             }
@@ -52,6 +45,18 @@ public class DaoUsers {
             throw new RuntimeException(e);
         }
         return user;
+    }
+    
+    private User checkPassword(String username, String password, PreparedStatement p) throws SQLException {
+        User newUser = null;
+        try (ResultSet r = p.executeQuery()) {
+            while (r.next()) {
+                if (BCrypt.checkpw(password, r.getString("passHashed")) & r.getInt("loggedIn") == 0){
+                    newUser = new User(r.getInt("id"),username,r.getInt("nOfComments"));      
+                }
+            }
+        }
+        return newUser;
     }
     
     public void logOut(User user) {

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -52,20 +53,30 @@ public class DaoChat {
      * @return Message information: username,timestamp and the message
      */
     public List<List<String>> getMessages(Integer id) {
+        List<List<String>> chatArray = null;
         String selectString = "SELECT username, created, message FROM Messages WHERE id_image =?;";
-        List<List<String>> palautus = new ArrayList<>();
-        List<String> t;
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
              PreparedStatement p  = conn.prepareStatement(selectString)){    
             p.setString(1, Integer.toString(id));
-            ResultSet r = p.executeQuery();
-            while (r.next()) {
-                t = Arrays.asList(new String[]{r.getString("username"),r.getString("created"),r.getString("message")});
-                palautus.add(t);
-            }
+            chatArray = createChatArray(p);
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return palautus;
+        return chatArray;
     }    
+    
+    private List<List<String>> createChatArray(PreparedStatement p) throws SQLException {
+        List<List<String>> chatArray = new ArrayList<>();
+        List<String> t;
+        try (ResultSet r = p.executeQuery()) {
+            while (r.next()) {
+                t = Arrays.asList(new String[]{r.getString("username"),r.getString("created"),r.getString("message")});
+                chatArray.add(t);
+            }
+        }
+        return chatArray;
+        
+        
+        
+    }
 }
