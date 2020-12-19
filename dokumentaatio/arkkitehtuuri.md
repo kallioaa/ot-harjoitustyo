@@ -34,7 +34,13 @@ The application logic consists of the three above mentioned logic classes to inc
 
 UserLogic provides three simple methods and takes care of interaction with the DaoUsers. This class provides the User of the current session for the Universal logic after communicating with DaoUsers. The User of current session is needed by both ChatLogic and ImageLogic.
 
+**ChatLogic**
+
+ChatLogic uses the information about the current image and user to offer methods for UI to add and fetch messages from the DaoChat
+
 **ImageLogic**
+
+
 
 
 # Tiedostot
