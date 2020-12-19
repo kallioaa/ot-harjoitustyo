@@ -7,7 +7,7 @@ package keskusteluakuvista.logic;
 
 import java.util.ArrayList;
 import java.util.List;
-import keskusteluakuvista.database.DaoChat;
+import keskusteluakuvista.database.DaoChats;
 
 /**
  *
@@ -15,10 +15,10 @@ import keskusteluakuvista.database.DaoChat;
  */
 public class ChatLogic {
     
-    private final DaoChat daoChat;
+    private final DaoChats daoChat;
     private final UniversalLogic uniLogic;
     
-    public ChatLogic(DaoChat daoChat, UniversalLogic uniLogic) {
+    public ChatLogic(DaoChats daoChat, UniversalLogic uniLogic) {
         this.daoChat = daoChat;
         this.uniLogic = uniLogic;
     }

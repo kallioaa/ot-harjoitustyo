@@ -11,9 +11,9 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import keskusteluakuvista.database.Dao;
-import keskusteluakuvista.database.DaoChat;
-import keskusteluakuvista.database.DaoImages;
-import keskusteluakuvista.database.DaoUsers;
+import keskusteluakuvista.database.FileDaoChats;
+import keskusteluakuvista.database.FileDaoImages;
+import keskusteluakuvista.database.FileDaoUsers;
 import keskusteluakuvista.logic.ChatLogic;
 import keskusteluakuvista.logic.ImageIOStub;
 import keskusteluakuvista.logic.ImageLogic;
@@ -39,9 +39,9 @@ public class MainGui extends Application {
     @Override
     public void start(Stage primarystage) throws Exception {
         Dao dao = new Dao("kkDatabase.db");
-        DaoImages daoImages = new DaoImages(dao);
-        DaoChat daoChat = new DaoChat(dao);
-        DaoUsers daoUsers = new DaoUsers(dao);
+        FileDaoImages daoImages = new FileDaoImages(dao);
+        FileDaoChats daoChat = new FileDaoChats(dao);
+        FileDaoUsers daoUsers = new FileDaoUsers(dao);
         UniversalLogic uniLogic = new UniversalLogic();
         this.uniLogic = uniLogic;
         

@@ -6,13 +6,12 @@
 package keskusteluakuvista.logic;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import javax.imageio.ImageIO;
 import entities.ImageToHash;
 import keskusteluakuvista.database.DaoImages;
+
 
 /**
  *

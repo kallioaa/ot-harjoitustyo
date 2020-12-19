@@ -14,7 +14,7 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.List;
 import javax.imageio.ImageIO;
-import keskusteluakuvista.database.DaoImages;
+import keskusteluakuvista.database.FileDaoImages;
 import keskusteluakuvista.logic.ImageIOStub;
 import keskusteluakuvista.logic.ImageLogic;
 import keskusteluakuvista.logic.UniversalLogic;
@@ -34,13 +34,13 @@ import static org.mockito.Mockito.when;
  */
 public class ImageLogicTest {
     ImageIOStub imageLoader;
-    DaoImages daoImages;
+    FileDaoImages daoImages;
     UniversalLogic uniLogic;
     ImageLogic imageLogic;
             
     @Before
     public void setUp() {
-        daoImages = mock(DaoImages.class);
+        daoImages = mock(FileDaoImages.class);
         uniLogic = mock(UniversalLogic.class);
         imageLoader = mock(ImageIOStub.class);
         imageLogic = new ImageLogic(daoImages, uniLogic,imageLoader);

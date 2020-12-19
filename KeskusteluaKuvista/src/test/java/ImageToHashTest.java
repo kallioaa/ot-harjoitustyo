@@ -9,7 +9,7 @@ import javax.imageio.ImageIO;
 import junit.framework.Assert;
 import entities.ImageToHash;
 import keskusteluakuvista.database.Dao;
-import keskusteluakuvista.database.DaoImages;
+import keskusteluakuvista.database.FileDaoImages;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;

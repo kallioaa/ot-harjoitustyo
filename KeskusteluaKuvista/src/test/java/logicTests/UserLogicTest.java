@@ -6,7 +6,7 @@
 package logicTests;
 
 import entities.User;
-import keskusteluakuvista.database.DaoUsers;
+import keskusteluakuvista.database.FileDaoUsers;
 import keskusteluakuvista.logic.UniversalLogic;
 import keskusteluakuvista.logic.UserLogic;
 import static org.junit.Assert.assertEquals;
@@ -28,14 +28,14 @@ import static org.mockito.Mockito.when;
 public class UserLogicTest {
     
     private static UserLogic userLogic;
-    private static DaoUsers daoUsers;
+    private static FileDaoUsers daoUsers;
     private static UniversalLogic uniLogic;
     
     
     @Before
     public void setUp() {
         uniLogic = mock(UniversalLogic.class);
-        daoUsers = mock(DaoUsers.class);
+        daoUsers = mock(FileDaoUsers.class);
         userLogic = new UserLogic(daoUsers,uniLogic);
     }
     

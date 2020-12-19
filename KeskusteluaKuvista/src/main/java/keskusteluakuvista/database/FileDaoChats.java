@@ -19,11 +19,11 @@ import java.util.List;
  * @author aatukallio
  */
 
-public class DaoChat {
+public class FileDaoChats implements DaoChats {
         
     public Dao dao;
     
-    public DaoChat(Dao dao) {
+    public FileDaoChats(Dao dao) {
         this.dao = dao;
     }
     
@@ -33,6 +33,7 @@ public class DaoChat {
      * @param username Session's user
      * @param text Message from the user
      */
+    @Override
     public void addMessage(Integer id, String username, String text) {
         String insertString = "INSERT INTO Messages (id_image, message, username, created) VALUES (?, ?, ?, CURRENT_TIMESTAMP);";
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
@@ -52,6 +53,7 @@ public class DaoChat {
      * @param id image id
      * @return Message information: username,timestamp and the message
      */
+    @Override
     public List<List<String>> getMessages(Integer id) {
         List<List<String>> chatArray = null;
         String selectString = "SELECT username, created, message FROM Messages WHERE id_image =?;";

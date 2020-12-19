@@ -9,7 +9,7 @@ import entities.User;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import keskusteluakuvista.database.DaoChat;
+import keskusteluakuvista.database.FileDaoChats;
 import keskusteluakuvista.logic.ChatLogic;
 import keskusteluakuvista.logic.UniversalLogic;
 import static org.junit.Assert.assertEquals;
@@ -29,14 +29,14 @@ import static org.mockito.Mockito.when;
 public class ChatLogicTest {
     
     private static ChatLogic chatLogic;
-    private static DaoChat daoChat;
+    private static FileDaoChats daoChat;
     private static UniversalLogic uniLogic;
     
     
     @Before
     public void setUp() {
         uniLogic = mock(UniversalLogic.class);
-        daoChat = mock(DaoChat.class);
+        daoChat = mock(FileDaoChats.class);
         chatLogic = new ChatLogic(daoChat,uniLogic);
     }
     

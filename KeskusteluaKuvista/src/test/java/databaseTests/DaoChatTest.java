@@ -4,7 +4,7 @@ package databaseTests;
 import java.io.File;
 import java.util.List;
 import keskusteluakuvista.database.Dao;
-import keskusteluakuvista.database.DaoChat;
+import keskusteluakuvista.database.FileDaoChats;
 import org.junit.After;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
@@ -26,12 +26,12 @@ import org.junit.Test;
 public class DaoChatTest {
     
     private static Dao dao;
-    private static DaoChat chatdb;
+    private static FileDaoChats chatdb;
         
     @BeforeClass
     public static void setUpClass() {
         dao = new Dao("testDatabase.db");
-        chatdb = new DaoChat(dao);
+        chatdb = new FileDaoChats(dao);
     }
     
     @Test

@@ -7,7 +7,7 @@ package databaseTests;
 
 import java.io.File;
 import keskusteluakuvista.database.Dao;
-import keskusteluakuvista.database.DaoUsers;
+import keskusteluakuvista.database.FileDaoUsers;
 import org.junit.After;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -23,12 +23,12 @@ import org.junit.Test;
 
 public class DaoUsersTest {
     private static Dao dao;
-    private static DaoUsers usersdb;
+    private static FileDaoUsers usersdb;
         
     @BeforeClass
     public static void setUpClass() {
         dao = new Dao("testDatabase.db");
-        usersdb = new DaoUsers(dao);
+        usersdb = new FileDaoUsers(dao);
     }
     
     @Test

@@ -26,7 +26,7 @@ import org.junit.Test;
 
 public class DaoImagesTest {
     private static Dao dao;
-    private static DaoImages imgdao;
+    private static FileDaoImages imgdao;
     private static BufferedImage img1;
     private static BufferedImage img2;
     private static BufferedImage img3;
@@ -38,7 +38,7 @@ public class DaoImagesTest {
         img1 = ImageIO.read(new File("testImages","koira1.jpg"));
         img2 = ImageIO.read(new File("testImages","koira2.jpg"));
         img3 = ImageIO.read(new File("testImages","koira3.jpg"));
-        imgdao = new DaoImages(dao);
+        imgdao = new FileDaoImages(dao);
     }    
  
     @Test

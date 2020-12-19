@@ -8,6 +8,7 @@ package keskusteluakuvista.logic;
 import entities.User;
 import keskusteluakuvista.database.DaoUsers;
 
+
 /**
  *
  * @author aatukallio
