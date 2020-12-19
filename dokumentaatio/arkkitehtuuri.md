@@ -2,6 +2,14 @@
 
 ## Rakenne
 
+
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/rakenne1.png?raw=true)
+
+
+
+
+
+
 Käyttöliittymä sisältää kolme erilaista näkymää
 
 - kirjautuminen
@@ -14,7 +22,7 @@ Jokaiseen liittyy oma FXML tiedosto sekä Controller (MVC). Eri controllerit kes
 
 Sovellus on toteuttu MVC tapaa noudattaen. Applications logic keskustelee eri dao:jen kanssa pitäen UI puolen mahdollisimman tyhmänä. Kaikki Dao:t sekä sovelluslogiikan luokkia on toteutettu Singletonien avulla.
 
-![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/rakenne.png?raw=true)
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/rakenne1.png?raw=true)
 
 # Tiedostot
 
