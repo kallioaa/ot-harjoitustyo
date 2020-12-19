@@ -20,7 +20,7 @@ Views are implemented by FXML-files which can be found in *src/main/resources/gu
 The controllers are connected to different logic classes. Controllers for Login and creating a new user use the UserLogic class. Controller for the main view uses the userLogic, imageLogic and chatLogic classes.
 
 
-# Application logic
+## Application logic
 
 The application logic consists of the three above mentioned logic classes to increase the cohesiveness. Principal goal of the split is to diffrenetiate the logic of three core functionalities -- user, image and chat.
 
@@ -42,11 +42,8 @@ ChatLogic uses the information about the current image and user to offer methods
 
 Imagelogic class provides the imageID of a current image for UniversalLogic. 
 
-
-
-# Tiedostot
+## Database
 
 Sovellus käyttää tietojen tallentamiseen SQLite tietokantaa, jossa on neljä eri taulua.
 
-
-
+## Core operations
