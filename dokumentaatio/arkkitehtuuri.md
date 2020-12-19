@@ -9,15 +9,17 @@ The app is implementing a layered architecture with three layers meaning no depe
 
 ## User interface
 
-The user interface has three differnet views.
+The user interface follows the Model-View-Controller model. It has a total of three views:
 
 - log in
 - creating a new user
-- searching for images and senging messages
+- searching for images and senging messages (main view).
 
 Views are imoplemented by FXML-files avulla which can be found in *src/main/resources/gui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
 
-This 
+The controllers are connected to different logic classes. Controllers for Login and creating a new user use the UserLogic class. Controller for the main view uses the userLogic, imageLogic and chatLogic classes.
+
+
 
 # Sovelluslogiikka
 
