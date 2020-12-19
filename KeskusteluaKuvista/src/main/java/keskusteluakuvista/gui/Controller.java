@@ -41,7 +41,7 @@ public class Controller {
         controller.setUp(userLogic, imageLogic, chatLogic, this);
         
         Scene tableViewScene = new Scene(root);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
     }
@@ -54,7 +54,7 @@ public class Controller {
         controller.setUp(userLogic, this);
         
         Scene tableViewScene = new Scene(root);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
     }
@@ -67,7 +67,7 @@ public class Controller {
         controller.setUp(userLogic, this);
         
         Scene tableViewScene = new Scene(root);
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(tableViewScene);
         window.show();
     }

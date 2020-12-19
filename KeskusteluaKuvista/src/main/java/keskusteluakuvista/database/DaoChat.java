@@ -36,7 +36,7 @@ public class DaoChat {
     public void addMessage(Integer id, String username, String text) {
         String insertString = "INSERT INTO Messages (id_image, message, username, created) VALUES (?, ?, ?, CURRENT_TIMESTAMP);";
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
-             PreparedStatement p = conn.prepareStatement(insertString)){
+             PreparedStatement p = conn.prepareStatement(insertString)) {
             p.setInt(1, id);
             p.setString(2, text);
             p.setString(3, username);
@@ -56,7 +56,7 @@ public class DaoChat {
         List<List<String>> chatArray = null;
         String selectString = "SELECT username, created, message FROM Messages WHERE id_image =?;";
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
-             PreparedStatement p  = conn.prepareStatement(selectString)){    
+             PreparedStatement p  = conn.prepareStatement(selectString)) {    
             p.setString(1, Integer.toString(id));
             chatArray = createChatArray(p);
         } catch (Exception e) {
@@ -70,7 +70,7 @@ public class DaoChat {
         List<String> t;
         try (ResultSet r = p.executeQuery()) {
             while (r.next()) {
-                t = Arrays.asList(new String[]{r.getString("username"),r.getString("created"),r.getString("message")});
+                t = Arrays.asList(new String[]{r.getString("username"), r.getString("created"), r.getString("message")});
                 chatArray.add(t);
             }
         }

@@ -17,7 +17,7 @@ public class UserLogic {
     private final DaoUsers daoUsers;
     private final UniversalLogic uniLogic;
     
-    public UserLogic (DaoUsers daoUsers, UniversalLogic uniLogic) {
+    public UserLogic(DaoUsers daoUsers, UniversalLogic uniLogic) {
         this.daoUsers = daoUsers;
         this.uniLogic = uniLogic;
     }
@@ -39,7 +39,7 @@ public class UserLogic {
     public String createUser(String username, String password, String passwordCheck) {
         if (password.length() >= 8 & !password.contains(" ")) {
             if (password.equals(passwordCheck)) {
-                boolean created = daoUsers.addAccount(username,password);
+                boolean created = daoUsers.addAccount(username, password);
                 if (!created) {
                     return "Username is taken";
                 }

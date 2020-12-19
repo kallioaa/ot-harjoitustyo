@@ -23,14 +23,19 @@ import org.apache.commons.dbutils.DbUtils;
  */
 public class Dao {
     
-    private final String dbUrl = "kkDatabase.db";
+    private final String dbUrl;
     private final String dbUsername = "imageChatterApp";
     private final String dbPassword = "ax756f89C";
     
-    public Dao() {
+    public Dao(String url) {
+        dbUrl = url;
         initializeDb();
     }
     
+    /**
+     * return 
+     * @return String 
+     */
     public String getdbUrl() {
         return this.dbUrl;
     }
@@ -52,7 +57,7 @@ public class Dao {
             if (!file.exists()) {
                 InputStream luontiLauseetStream = Dao.class.getResourceAsStream("tables.sql");
                 List<String> fileLines = new BufferedReader(new InputStreamReader(luontiLauseetStream, StandardCharsets.UTF_8)).lines().collect(Collectors.toList());
-                Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dbUrl, this.dbUsername,this.dbPassword);
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dbUrl, this.dbUsername, this.dbPassword);
                 Statement s = conn.createStatement();
                 for (String command:fileLines) {
                     s.execute(command);

@@ -33,20 +33,20 @@ public class DaoImages {
      * @return Pictures ID (key in database)
     */
     //Function adds an image to the database if it does not exist.
-    public Integer addImage(ImageToHash image,String username) {
+    public Integer addImage(ImageToHash image, String username) {
         String insertString = "INSERT INTO Images (hashcode) VALUES (?)";
         Integer id;
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())){
-            Integer kuvanID = this.key(image,conn);
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())) {
+            Integer kuvanID = this.key(image, conn);
             if (kuvanID != -1) {
                 return kuvanID;
             } else {
-                try (PreparedStatement p  = conn.prepareStatement(insertString)){
+                try (PreparedStatement p  = conn.prepareStatement(insertString)) {
                     p.setInt(1, image.hashCode());
                     p.execute();
                 }
                 id = this.numberOfRows(conn);
-                setHistory(id,username,conn);                 
+                setHistory(id, username, conn);                 
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -60,9 +60,9 @@ public class DaoImages {
      * @param username User of the session
      */
     
-    private void setHistory(Integer id,String username,Connection conn) {
+    private void setHistory(Integer id, String username, Connection conn) {
         String insertString = "INSERT INTO ImageHistory (id_image, username, created) VALUES (?, ?, CURRENT_TIMESTAMP)";
-        try (PreparedStatement p  = conn.prepareStatement(insertString)){
+        try (PreparedStatement p  = conn.prepareStatement(insertString)) {
             p.setInt(1, id);
             p.setString(2, username);
             p.execute();
@@ -81,7 +81,7 @@ public class DaoImages {
         
         List<String> returnList = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
-             PreparedStatement p  = conn.prepareStatement(selectString)){
+             PreparedStatement p  = conn.prepareStatement(selectString)) {
             p.setInt(1, id);
             try (ResultSet r = p.executeQuery()) {
                 if (r.next()) {
@@ -103,7 +103,7 @@ public class DaoImages {
     private Integer numberOfRows(Connection conn) {
         String selectString = "SELECT COUNT(*) FROM Images";
         Integer rows;
-        try (PreparedStatement p  = conn.prepareStatement(selectString)){
+        try (PreparedStatement p  = conn.prepareStatement(selectString)) {
             rows = p.executeQuery().getInt(1);                    
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -117,7 +117,7 @@ public class DaoImages {
      * @param image ImageToHash object
      * @return Integer
      */
-    private Integer key(ImageToHash image,Connection conn) {
+    private Integer key(ImageToHash image, Connection conn) {
         String selectString = "SELECT id FROM Images WHERE hashcode=?";
         Integer key;
         try (PreparedStatement p  = conn.prepareStatement(selectString)) {

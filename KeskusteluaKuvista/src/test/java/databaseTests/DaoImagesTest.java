@@ -34,7 +34,7 @@ public class DaoImagesTest {
     
     @BeforeClass
     public static void setUpClass() throws IOException {
-        dao = new Dao();
+        dao = new Dao("testDatabase.db");
         img1 = ImageIO.read(new File("testImages","koira1.jpg"));
         img2 = ImageIO.read(new File("testImages","koira2.jpg"));
         img3 = ImageIO.read(new File("testImages","koira3.jpg"));
@@ -75,7 +75,7 @@ public class DaoImagesTest {
     
     @After
     public void clean() {
-        File myObj = new File("kkDatabase.db");
+        File myObj = new File("testDatabase.db");
         myObj.delete();
         dao.initializeDb();
     }

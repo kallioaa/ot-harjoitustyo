@@ -13,7 +13,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import keskusteluakuvista.logic.UserLogic;
 
-public class ControllerNewUser{
+public class ControllerNewUser {
     
     private UserLogic userLogic;
     private Controller controller;
@@ -39,19 +39,19 @@ public class ControllerNewUser{
     //Functionality for pressing the new user button. Displays the error message if the new user information are in a wrong format.
     @FXML
     void createNewUser(ActionEvent event) throws IOException {
-       String retString = userLogic.createUser(username.getText(), password.getText(), repeatPassword.getText());
-      
-       username.clear();
-       password.clear();
-       repeatPassword.clear();
-       
-       if (retString.equals("Success")) {
-           controller.changeToLogin(event);   
-       }
-       passwordMsg.setText(retString);
+        String retString = userLogic.createUser(username.getText(), password.getText(), repeatPassword.getText());
+
+        username.clear();
+        password.clear();
+        repeatPassword.clear();
+
+        if (retString.equals("Success")) {
+            controller.changeToLogin(event);   
+        }
+        passwordMsg.setText(retString);
     }
     
-    void setUp(UserLogic userLogic,Controller controller) {
+    void setUp(UserLogic userLogic, Controller controller) {
         this.userLogic = userLogic;
         this.controller = controller;
     }

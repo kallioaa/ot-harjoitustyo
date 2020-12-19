@@ -50,12 +50,12 @@
             <Insets bottom="5.0" left="25.0" right="25.0" top="5.0" />
          </VBox.margin>
          <content>
-            <ListView fx:id="all_messages" prefHeight="362.0" prefWidth="434.0" />
+            <ListView fx:id="allMessages" prefHeight="362.0" prefWidth="434.0" />
          </content>
       </ScrollPane>
       <HBox prefHeight="48.0" prefWidth="500.0">
          <children>
-            <TextField fx:id="tf_message" prefHeight="32.0" prefWidth="403.0">
+            <TextField fx:id="tfMessage" prefHeight="32.0" prefWidth="403.0">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>

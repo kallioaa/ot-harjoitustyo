@@ -44,10 +44,10 @@ public class ControllerMain implements Initializable {
     private ImageView image;
 
     @FXML
-    private ListView all_messages;
+    private ListView allMessages;
 
     @FXML
-    private TextField tf_message;
+    private TextField tfMessage;
     
     /**
      * Loads the image from given URL and displays it int the GUI main view
@@ -80,9 +80,9 @@ public class ControllerMain implements Initializable {
     
     //Method formats the list recieved from ApplicationLogic to desired format
     private String setUpHistory(List<String> history) {
-        if (imageLogic.getBufImage() != null)
+        if (imageLogic.getBufImage() != null) {
             return "<" + history.get(0) + ", " + history.get(1) + ", " + history.get(2) + ">";
-        else {
+        } else {
             return "";
         }
     }
@@ -91,14 +91,14 @@ public class ControllerMain implements Initializable {
     private void setChat() {   
         List<String> chat = setUpChatList(this.chatLogic.showChat());
         ObservableList<String> messages = FXCollections.observableArrayList(chat);
-        this.all_messages.setItems(messages);
+        this.allMessages.setItems(messages);
     }  
     
     //Functionality when pressing the new image from URL button. 
     @FXML
     void onSearchImage(ActionEvent event) {
-        String url = this.tf_message.getText();
-        this.tf_message.clear();
+        String url = this.tfMessage.getText();
+        this.tfMessage.clear();
         this.imageLogic.searchImageID(url);
         this.imageHistory.setText(setUpHistory(this.imageLogic.getImageHistory()));
         this.loadImage();
@@ -108,9 +108,9 @@ public class ControllerMain implements Initializable {
     //Functionality when pressing the send button.
     @FXML
     void onSendClick(ActionEvent event) {
-        chatLogic.addMessage(this.tf_message.getText());
+        chatLogic.addMessage(this.tfMessage.getText());
         this.setChat();
-        this.tf_message.clear();
+        this.tfMessage.clear();
     }
    
     /**

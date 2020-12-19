@@ -27,7 +27,7 @@ public class DaoUsersTest {
         
     @BeforeClass
     public static void setUpClass() {
-        dao = new Dao();
+        dao = new Dao("testDatabase.db");
         usersdb = new DaoUsers(dao);
     }
     
@@ -90,7 +90,7 @@ public class DaoUsersTest {
     
     @After
     public void clean() {
-        File myObj = new File("kkDatabase.db");
+        File myObj = new File("testDatabase.db");
         myObj.delete();
         dao.initializeDb();
     }

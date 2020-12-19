@@ -30,7 +30,7 @@ public class DaoChatTest {
         
     @BeforeClass
     public static void setUpClass() {
-        dao = new Dao();
+        dao = new Dao("testDatabase.db");
         chatdb = new DaoChat(dao);
     }
     
@@ -62,7 +62,7 @@ public class DaoChatTest {
     
     @After
     public void clean() {
-        File myObj = new File("kkDatabase.db");
+        File myObj = new File("testDatabase.db");
         myObj.delete();
         dao.initializeDb();
     }

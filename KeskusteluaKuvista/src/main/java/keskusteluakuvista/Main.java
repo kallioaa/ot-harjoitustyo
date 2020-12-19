@@ -15,8 +15,6 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    
-    //Creates instances of the objects and starts the text user interface. Will be replaced with GUI in later versions. 
     public static void main(String[] args) {
         MainGui.main(args);
     }

@@ -12,7 +12,7 @@ import java.util.Arrays;
  *
  * @author aatukallio
  */
-public class KonsoliStub implements IO{
+public class KonsoliStub implements IO {
     
     ArrayList<String> inputs;
     int command;

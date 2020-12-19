@@ -18,7 +18,7 @@ public class ChatLogic {
     private final DaoChat daoChat;
     private final UniversalLogic uniLogic;
     
-    public ChatLogic(DaoChat daoChat,UniversalLogic uniLogic) {
+    public ChatLogic(DaoChat daoChat, UniversalLogic uniLogic) {
         this.daoChat = daoChat;
         this.uniLogic = uniLogic;
     }

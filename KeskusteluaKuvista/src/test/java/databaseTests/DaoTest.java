@@ -26,8 +26,8 @@ public class DaoTest {
     
     @Test
     public void databaseIsCreated() throws Exception {
-        new Dao();
-        File myObj = new File("kkDatabase.db");
+        new Dao("testDatabase.db");
+        File myObj = new File("testDatabase.db");
         assertTrue(myObj.exists());
     }
 }

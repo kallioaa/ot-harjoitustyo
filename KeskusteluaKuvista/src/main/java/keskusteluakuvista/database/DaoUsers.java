@@ -35,11 +35,11 @@ public class DaoUsers {
         String selectString = "SELECT id, passHashed, nOfComments, loggedIn from Users where username=?";
         User user = null;
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
-             PreparedStatement p = conn.prepareStatement(selectString)){   
+             PreparedStatement p = conn.prepareStatement(selectString)) {   
             p.setString(1, username);
             user = checkPassword(username, password, p);
             if (user != null) {
-                changeStatus(user,1,conn);
+                changeStatus(user, 1, conn);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -51,8 +51,8 @@ public class DaoUsers {
         User newUser = null;
         try (ResultSet r = p.executeQuery()) {
             while (r.next()) {
-                if (BCrypt.checkpw(password, r.getString("passHashed")) & r.getInt("loggedIn") == 0){
-                    newUser = new User(r.getInt("id"),username,r.getInt("nOfComments"));      
+                if (BCrypt.checkpw(password, r.getString("passHashed")) & r.getInt("loggedIn") == 0) {
+                    newUser = new User(r.getInt("id"), username, r.getInt("nOfComments"));      
                 }
             }
         }
@@ -61,7 +61,7 @@ public class DaoUsers {
     
     public void logOut(User user) {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())) {
-            changeStatus(user,0,conn);
+            changeStatus(user, 0, conn);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -88,8 +88,8 @@ public class DaoUsers {
     public boolean addAccount(String username, String password) {
         boolean accountAdded = false;
         String insertString = "INSERT INTO Users (username, passHashed, salt, nOfComments, loggedIn) VALUES (?, ?, ?, ?, ?)";
-        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())){ 
-            if (!contains(username,conn)) {
+        try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())) { 
+            if (!contains(username, conn)) {
                 try (PreparedStatement p  = conn.prepareStatement(insertString)) {
                     String salt = BCrypt.gensalt();
                     password = BCrypt.hashpw(password, salt);           
@@ -112,11 +112,11 @@ public class DaoUsers {
         String selectString = "SELECT * FROM Users WHERE username=?";
         boolean contains = false;
         
-        try (PreparedStatement p  = conn.prepareStatement(selectString)){
+        try (PreparedStatement p  = conn.prepareStatement(selectString)) {
             p.setString(1, username);
             try (ResultSet r = p.executeQuery()) {
                 if (r.next()) {
-                contains = true;
+                    contains = true;
                 }
             }
         } catch (SQLException e) {
