@@ -1,4 +1,6 @@
-# Käyttöliittymä
+# Arkkitehtuuri
+
+## Rakenne
 
 Käyttöliittymä sisältää kolme erilaista näkymää
 
