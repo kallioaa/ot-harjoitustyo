@@ -40,6 +40,7 @@ ChatLogic uses the information about the current image and user to offer methods
 
 **ImageLogic**
 
+Imagelogic class provides the imageID of a current image for UniversalLogic. 
 
 
 
