@@ -1,22 +1,23 @@
-# Arkkitehtuuri
+# Architecture
 
-## Rakenne
+## Structure
 
+The app is implementing a layered architecture with three layers meaning no dependencies to layers above.
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/rakenne1.png?raw=true)
 
 
+## User interface
 
+The user interface has three differnet views.
 
+- log in
+- creating a new user
+- searching for images and senging messages
 
+Views are imoplemented by FXML-files avulla which can be found in *src/main/resources/gui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
 
-Käyttöliittymä sisältää kolme erilaista näkymää
-
-- kirjautuminen
-- uuden käyttäjän luominen
-- kuvien katsominen ja viestien lähettäminen.
-
-Jokaiseen liittyy oma FXML tiedosto sekä Controller (MVC). Eri controllerit keskustelevat ainoastaan Applications Logic luokan kanssa, lukuunottamatta muutamaa staattisen metodin kursia.
+This 
 
 # Sovelluslogiikka
 
