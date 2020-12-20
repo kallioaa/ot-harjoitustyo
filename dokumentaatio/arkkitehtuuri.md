@@ -60,6 +60,11 @@ Here are some the core functionalities visualized with sequence forms.
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/newUserSequence.png?raw=true)
 
+User clicks the new user button after typing username, password and passford confirmation on the UI. The UI calls UserLogic's createUser method. If there is something wrong with the credentials (password too short or confirmation incorrect) userLogic returns a string about what went wrong to the UI and which is then shown to the user. 
+
+If the credentials are okay UserLogic proceeds to call addAccount method from DaoUsers. Add account method returns true if the new account is created and false if the username is already taken. UserLogic returns a string about what happened to the UI. String "successful" changes the Log in -view for the user.
+
+### Logging in 
 
 
 
