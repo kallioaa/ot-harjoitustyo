@@ -56,6 +56,9 @@ When you run the program, a new file called *imagechatter.db* will be added to y
 
 Here are some the core functionalities visualized with sequence forms.
 
+### Creating a new user
+
+
 
 
 
