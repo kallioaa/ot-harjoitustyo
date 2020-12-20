@@ -26,7 +26,7 @@ The application logic consists of the three above mentioned logic classes to inc
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/Sovelluslogiikka1.png?raw=true)
 
-**The picture above is a simplification of the logic layer.** In addition to the daos the logic classes are connected to an *UniversalLogic*-object which stores atributes public to all logics. Below is a visual is a more in-depth visualization of the logic layer and description of the classes.
+**Picture above is a simplification of the logic layer.** In addition to the daos the logic classes are connected to an *UniversalLogic*-object which stores atributes public to all logics. Below is a visual is a more in-depth visualization of the logic layer and description of the classes.
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/logicKuvaus.png?raw=true)
 
