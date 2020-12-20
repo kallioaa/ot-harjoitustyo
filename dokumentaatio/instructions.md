@@ -30,7 +30,7 @@ Now you can comment the picture by typing your comment in the textfield and pres
 
 The image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
 
-The app supports all of the most common image types. If you enter an url which is not applicable, the app will tell you by displaying an error message. The error message lists only **some supported image types**. For example, common *.webp* images are supported even though they are not mentined.
+The app supports all of the most common image types. If you enter an url which is not applicable, the app will tell you by displaying an error message. **The error message lists only some supported image types**. For example, common *.webp* images are supported even though they are not mentined.
 
 ## Logging out and closing the app
 
