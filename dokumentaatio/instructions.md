@@ -26,8 +26,9 @@ After the following, you will end up in the following view.
 
 ![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/imageSearched.png)
 
+Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button.
 
-
+## Imageformats supported
 
 
 
