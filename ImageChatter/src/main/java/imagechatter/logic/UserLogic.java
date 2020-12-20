@@ -10,7 +10,7 @@ import imagechatter.database.DaoUsers;
 
 
 /**
- *
+ * Handles logic for the User
  * @author aatukallio
  */
 public class UserLogic {
@@ -23,7 +23,12 @@ public class UserLogic {
         this.uniLogic = uniLogic;
     }
     
-    
+    /**
+     * If login is successful new user is set for the universal logic.
+     * @param username Username
+     * @param password Password
+     * @return True if user is logged in and false if not
+     */
     public boolean logIn(String username, String password) {
         User sessionUser = daoUsers.logIn(username, password);
         if (sessionUser != null) {
@@ -33,10 +38,17 @@ public class UserLogic {
         return false;
     }
     
+    /**
+     * Asks the DaoUsers to logout the current user.
+     */
     public void logOut() {
         daoUsers.logOut(uniLogic.getUser());
     }
     
+    /**
+     * Checks if the credentials are in a correct format. If they are method asks DaoUsers to add a new user.
+     * @return String about what went wrong. Null if a new account is created.
+    */
     public String createUser(String username, String password, String passwordCheck) {
         if (password.length() >= 8 & !password.contains(" ")) {
             if (password.equals(passwordCheck)) {
@@ -44,7 +56,7 @@ public class UserLogic {
                 if (!created) {
                     return "Username is taken";
                 }
-                return "Success";
+                return null;
             }
             return "Passwords are not the same.";
         }

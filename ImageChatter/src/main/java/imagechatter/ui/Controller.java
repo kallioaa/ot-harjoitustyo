@@ -32,7 +32,12 @@ public class Controller {
         this.imageLogic = imageLogic;
         this.chatLogic = chatLogic;
     }
-      
+    
+    /**
+     * Changes to main view.
+     * @param event
+     * @throws IOException 
+     */
     protected void changeToMain(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("view.fxml"));
         Parent root = loader.load();
@@ -46,6 +51,11 @@ public class Controller {
         window.show();
     }
     
+    /**
+     * Changes to new user view.
+     * @param event
+     * @throws IOException 
+     */
     protected void changeToNewUser(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("newUserView.fxml"));
         Parent root = loader.load();
@@ -59,6 +69,11 @@ public class Controller {
         window.show();
     }
     
+    /**
+     * Changes to log in view.
+     * @param event
+     * @throws IOException 
+     */
     protected void changeToLogin(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(this.getClass().getResource("loginView.fxml"));
         Parent root = loader.load();

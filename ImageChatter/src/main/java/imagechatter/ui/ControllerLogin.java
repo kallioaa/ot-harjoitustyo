@@ -31,7 +31,11 @@ public class ControllerLogin {
     @FXML
     private PasswordField password;  
     
-    //Functionality for pressing the log in button
+    /**
+     * Functionality for pressing the log in button
+     * @param event
+     * @throws IOException 
+     */
     @FXML
     void logInAttempt(ActionEvent event) throws IOException {
         Boolean success = userLogic.logIn(this.username.getText(), this.password.getText());
@@ -44,7 +48,11 @@ public class ControllerLogin {
         }
     }
     
-    
+    /**
+     * Works like a constructor for the controller.
+     * @param userLogic
+     * @param controller 
+     */
     void setUp(UserLogic userLogic, Controller controller) {
         this.userLogic = userLogic;
         this.controller = controller;

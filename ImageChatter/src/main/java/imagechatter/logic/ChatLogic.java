@@ -10,7 +10,7 @@ import java.util.List;
 import imagechatter.database.DaoChats;
 
 /**
- *
+ * Handles logic for the chat.
  * @author aatukallio
  */
 public class ChatLogic {
@@ -23,6 +23,10 @@ public class ChatLogic {
         this.uniLogic = uniLogic;
     }
     
+    /**
+     * Returns the chat for the ImageID defined in UniversalLogic. Empty chat if no imageID is defined.
+     * @return The chat of a picture
+     */
     public List<List<String>> showChat() {
         if (uniLogic.getImageId() != null) {
             return daoChat.getMessages(uniLogic.getImageId());
@@ -30,6 +34,10 @@ public class ChatLogic {
         return new ArrayList<>();
     }
     
+    /**
+     * Adds a message to an image's chat if the message is not empty and imageID is not null in UniversalLogic.
+     * @param text Message
+     */
     public void addMessage(String text) {
         if (uniLogic.getImageId() != null && !text.isEmpty()) {
             this.daoChat.addMessage(uniLogic.getImageId(), uniLogic.getUser().getUsername(), text.strip());

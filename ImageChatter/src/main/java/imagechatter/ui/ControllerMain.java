@@ -27,7 +27,10 @@ import imagechatter.logic.ChatLogic;
 import imagechatter.logic.ImageLogic;
 import imagechatter.logic.UserLogic;
 
-
+/**
+ * Controller for the main view
+ * @author aatukallio
+ */
 public class ControllerMain implements Initializable {
     
     private UserLogic userLogic;
@@ -49,10 +52,6 @@ public class ControllerMain implements Initializable {
     @FXML
     private TextField tfMessage;
     
-    /**
-     * Loads the image from given URL and displays it int the GUI main view
-     * @param url 
-     */
     private void loadImage() {
         Image currentNetImage = null;
         BufferedImage bImg = null;
@@ -94,7 +93,10 @@ public class ControllerMain implements Initializable {
         this.allMessages.setItems(messages);
     }  
     
-    //Functionality when pressing the new image from URL button. 
+    /**
+     * Functionality when pressing the new image from URL button. 
+     * @param event 
+     */
     @FXML
     void onSearchImage(ActionEvent event) {
         String url = this.tfMessage.getText();
@@ -105,7 +107,10 @@ public class ControllerMain implements Initializable {
         this.setChat();
     }
     
-    //Functionality when pressing the send button.
+    /**
+     * Functionality when pressing the sen button.
+     * @param event 
+     */
     @FXML
     void onSendClick(ActionEvent event) {
         chatLogic.addMessage(this.tfMessage.getText());
@@ -122,18 +127,21 @@ public class ControllerMain implements Initializable {
         controller.changeToLogin(event);        
     }
     
+    /**
+     * Works like a constructor for the controller.
+     * @param userLogic
+     * @param imagesLogic
+     * @param chatLogic
+     * @param controller 
+     */
     void setUp(UserLogic userLogic, ImageLogic imagesLogic, ChatLogic chatLogic, Controller controller) {
         this.userLogic = userLogic;
         this.imageLogic = imagesLogic;
         this.chatLogic = chatLogic;
         this.controller = controller;
     }
-   //Function set ups the databases needed.
-    /**
-     * 
-     * @param url
-     * @param rb
-     */
+    
+  
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {

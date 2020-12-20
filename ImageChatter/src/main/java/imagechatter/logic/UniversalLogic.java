@@ -8,7 +8,7 @@ package imagechatter.logic;
 import imagechatter.entities.User;
 
 /**
- *
+ *Holds values needed by all of the logic objects.
  * @author aatukallio
  */
 public class UniversalLogic {
@@ -24,9 +24,11 @@ public class UniversalLogic {
         return this.user;
     }
     
+ 
     public void setImageId(Integer imageId) {
         this.imageId = imageId;
     }
+    
     
     public Integer getImageId() {
         return this.imageId;

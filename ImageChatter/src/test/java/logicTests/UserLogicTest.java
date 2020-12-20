@@ -11,6 +11,7 @@ import imagechatter.logic.UniversalLogic;
 import imagechatter.logic.UserLogic;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -80,7 +81,7 @@ public class UserLogicTest {
         String password = "12345678";
         
         when(daoUsers.addAccount(username, password)).thenReturn(true);
-        assertEquals("Success",userLogic.createUser(username, password, password));
+        assertNull(userLogic.createUser(username, password, password));
     }
     
     @Test

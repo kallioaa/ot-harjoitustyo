@@ -21,7 +21,7 @@ import imagechatter.logic.UniversalLogic;
 import imagechatter.logic.UserLogic;
 
 /**
- *
+ * Sets up the GUI for the application.
  * @author aatukallio
  */
 
@@ -38,7 +38,7 @@ public class MainGui extends Application {
     
     @Override
     public void start(Stage primarystage) throws Exception {
-        Dao dao = new Dao("kkDatabase.db");
+        Dao dao = new Dao("imagechatter.db");
         FileDaoImages daoImages = new FileDaoImages(dao);
         FileDaoChats daoChat = new FileDaoChats(dao);
         FileDaoUsers daoUsers = new FileDaoUsers(dao);

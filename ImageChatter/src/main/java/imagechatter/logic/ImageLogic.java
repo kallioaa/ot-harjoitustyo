@@ -14,7 +14,7 @@ import imagechatter.database.DaoImages;
 
 
 /**
- *
+ * Handles logic for the image.
  * @author aatukallio
  */
 public class ImageLogic {
@@ -31,6 +31,10 @@ public class ImageLogic {
         this.uniLogic = uniLogic;
     }
    
+    /**
+     * Loads the image from a given URL and adds it to the DaoImages. Sets the imageID for Universal logic.
+     * @param url to the image
+     */
     public void searchImageID(String url) {
         try {
             bufImage = imageLoader.read(new URL(url));
@@ -43,6 +47,10 @@ public class ImageLogic {
         }
     }
     
+    /**
+     * 
+     * @return History of the image
+     */
     public List<String> getImageHistory() {
         if (uniLogic.getImageId() != null) {
             return daoImages.getHistrory(uniLogic.getImageId());
@@ -50,6 +58,10 @@ public class ImageLogic {
         return new ArrayList<>();
     }
     
+    /**
+     * 
+     * @return BufferedImage
+     */
     public BufferedImage getBufImage() {
         return bufImage;
     }

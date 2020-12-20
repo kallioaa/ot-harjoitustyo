@@ -30,7 +30,7 @@ public class FileDaoImages implements DaoImages {
     /**
     * Function adds an image to the database if it does not exist.
      * @param image ImageToHash object
-     * @param username session's user
+     * @param username Session's user
      * @return Pictures ID (key in database)
     */
     //Function adds an image to the database if it does not exist.
@@ -76,7 +76,7 @@ public class FileDaoImages implements DaoImages {
     /**
      * Function returns the history data of the image.
      * @param id Pictures key in Images table
-     * @return 
+     * @return Image's history
      */
     @Override
     public List<String> getHistrory(Integer id) {

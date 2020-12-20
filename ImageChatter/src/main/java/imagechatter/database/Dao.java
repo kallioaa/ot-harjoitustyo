@@ -33,23 +33,30 @@ public class Dao {
     }
     
     /**
-     * return 
-     * @return String 
+     * @return URL address of the database
      */
     public String getdbUrl() {
         return this.dbUrl;
     }
     
+    /**
+     * 
+     * @return Username for the database
+     */
     public String getdbUsername() {
         return this.dbUsername;
     }
     
+    /**
+     * 
+     * @return Password for the database
+     */
     public String getdbPassword() {
         return this.dbPassword;
     }
     
     /**
-     * Sets up the database. Table initializations are read from tables.sql
+     * Sets up the database. Table initializations are read from tables.sql.
      */
     public void initializeDb() {
         try {

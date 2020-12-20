@@ -13,6 +13,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import imagechatter.logic.UserLogic;
 
+
+/**
+ * Controller new user view
+ * @author aatukallio
+ */
+
 public class ControllerNewUser {
     
     private UserLogic userLogic;
@@ -36,7 +42,11 @@ public class ControllerNewUser {
         controller.changeToLogin(event);
     }
     
-    //Functionality for pressing the new user button. Displays the error message if the new user information are in a wrong format.
+    /**
+     * Functionality for pressing the new user button. Displays the error message if the new user information are in a wrong format.
+     * @param event Actionevent
+     * @throws IOException 
+     */
     @FXML
     void createNewUser(ActionEvent event) throws IOException {
         String retString = userLogic.createUser(username.getText(), password.getText(), repeatPassword.getText());
@@ -45,12 +55,17 @@ public class ControllerNewUser {
         password.clear();
         repeatPassword.clear();
 
-        if (retString.equals("Success")) {
+        if (retString == null) {
             controller.changeToLogin(event);   
         }
         passwordMsg.setText(retString);
     }
     
+    /**
+     * Works like a constructor for the controller.
+     * @param userLogic UserLogic
+     * @param controller Controller
+     */
     void setUp(UserLogic userLogic, Controller controller) {
         this.userLogic = userLogic;
         this.controller = controller;

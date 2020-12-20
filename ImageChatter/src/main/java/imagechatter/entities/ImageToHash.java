@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.util.Arrays;
 
 /**
- * ImageToHash takes a BufferedImage in the constructor and creates an object with an "unique" hash of of it.
+ * ImageToHash takes a BufferedImage in the constructor and creates an object with a unique hash.
  * 
  */
 public class ImageToHash {

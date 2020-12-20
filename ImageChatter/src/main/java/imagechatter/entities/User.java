@@ -6,7 +6,7 @@
 package imagechatter.entities;
 
 /**
- *
+ * User with attributes
  * @author aatukallio
  */
 public class User {
@@ -21,15 +21,19 @@ public class User {
         this.nOfComments = nOfComments;
     }
     
+    /**
+     * 
+     * @return User's ID
+     */
     public Integer getUserId() {
         return userId;
     }
     
+    /**
+     * 
+     * @return User's username
+     */
     public String getUsername() {
         return username;
-    }
-    
-    public Integer nOfComments() {
-        return nOfComments;
     }
 }

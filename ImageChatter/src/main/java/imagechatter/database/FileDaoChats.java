@@ -47,9 +47,8 @@ public class FileDaoChats implements DaoChats {
         }
     }
     
-    //Runction returns the messages for given image_id
     /**
-     * Method returns the messages for given image_id
+     * Returns the messages for given image_id
      * @param id image id
      * @return Message information: username,timestamp and the message
      */

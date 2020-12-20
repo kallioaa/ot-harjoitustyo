@@ -11,11 +11,17 @@ import java.net.URL;
 import javax.imageio.ImageIO;
 
 /**
- *
+ *Class is created to ease the testing.
  * @author aatukallio
  */
 public class ImageIOStub {
     
+    /**
+     * Returns a BudfferdImage from the URL.
+     * @param url
+     * @return Buffered image
+     * @throws IOException 
+     */
     public BufferedImage read(URL url) throws IOException {
         return ImageIO.read(url);
     }

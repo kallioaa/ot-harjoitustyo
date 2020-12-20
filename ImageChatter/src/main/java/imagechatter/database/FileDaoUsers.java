@@ -59,7 +59,10 @@ public class FileDaoUsers implements DaoUsers {
         }
         return newUser;
     }
-    
+    /**
+     * Logs out the user from the database.
+     * @param user User being logged out 
+     */
     @Override
     public void logOut(User user) {
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword())) {
@@ -83,8 +86,8 @@ public class FileDaoUsers implements DaoUsers {
     
     /**
      * Tries to create a new user to the database. 
-     * @param username 
-     * @param password
+     * @param username Username
+     * @param password Password
      * @return Returns True if new user is created. False if there already exists an user with this username.
      */
     @Override
