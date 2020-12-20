@@ -15,7 +15,7 @@ The user interface follows the Model-View-Controller model. It has a total of th
 - creating a new user
 - searching for images and senging messages (main view).
 
-Views are implemented by FXML-files which can be found in *src/main/resources/gui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
+Views are implemented by FXML-files which can be found in *src/main/resources/ui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
 
 The controllers are connected to different logic classes. Controllers for Login and creating a new user use the UserLogic class. Controller for the main view uses the userLogic, imageLogic and chatLogic classes.
 
@@ -44,8 +44,12 @@ Imagelogic class provides the imageID of a current image for UniversalLogic.
 
 ## Database
  
-The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
+The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. Dao will initialize a new database only if it does not exist already. The commands for creating the tables are included in *src/main/resources/database/tables.sql*. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
 
-The methods communicating with the database all initialize and closes the connection to the database, so there is now connection left open. Try-with-resources structure is used in every connection and statement which is recommended by Oracle.
+Methods communicating with the database all initialize and closes the connection to the database, so there is now connection left open. Try-with-resources structure is used in every connection and statement which is recommended by Oracle.
+
+### Closer look into the databse
+
+
 
 ## Core operations
