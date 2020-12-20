@@ -10,5 +10,4 @@
 | 17.12. | 10    | testing |
 | 19.12. | 6    | documenting |
 | 19.12. | 10    | documenting |
-
-Summa | 105
+| Sum | 105
