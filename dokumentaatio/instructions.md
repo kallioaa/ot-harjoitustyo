@@ -12,11 +12,8 @@ java -jar imagechatter.jar
 
 ## Creating an account
 
-After starting the app you should see the following view:
-
-![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/mainView.png)
-
-Press the "create new user"-button. You will end up in the following view.
+1. After starting the app press the create new user button
+2. Please insert your username and password. Password length must be over seven characters and can not contain spaces. The app informs you if the username is already taken.
 
 
 
