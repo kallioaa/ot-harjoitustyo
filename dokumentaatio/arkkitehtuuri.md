@@ -58,7 +58,7 @@ Here are some the core functionalities visualized with sequence forms.
 
 ### Creating a new user
 
-![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/newUserSequence.png?raw=true
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/newUserSequence.png?raw=true)
 
 
 
