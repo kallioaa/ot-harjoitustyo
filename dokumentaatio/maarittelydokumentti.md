@@ -1,13 +1,5 @@
-# Keskustelupalstat kuvista
+# ImageChatter
 
-Ohjelman ideana on tarjota anonyymi paikka vuorovaikutukselle johonkin kuvaan liittyen. Esimerkiksi voit syöttää ohjelmaan internetistä kuvan, joka avaa siihen liittyvän keskustelupalstan. Tämä on erityisen hyödyllistä aikana, jolloin sosiaalisen median palveluissa kuten Instagramissa useat käyttäjät 
-jakavat samoja kuvia, joille ei ole kuitenkaan olemassa yhteistä kommenttikenttää. Useat näistä "trendaavista" jaetuista kuvista on disinformatiivisia, joten ihmisten laumaälylle näiden kuvein faktojen korjaamiselle olisi tarvetta.
 
-## Käyttäjät
+The app offers a change to create an anonym chat for any picture online. For example, you can paste an image URL to ImageChatter which opens the chat about the image. The user will se all the messages added before plus additional information about the image's history on the app (when added first by who etc.). The source of the image does not matter, only the rgb-values. This is especially useful today because lots of disinformative pictures are circluating on social media and there exists no common place to talk about them.
 
-* Normaalikäyttäjä 
-
-## Suunnitellut toiminnallisuudet (normaalikäyttäjä)
-
-* Käyttäjä voi kopioda ohjelmaan kuvan, jonka jälkeen käyttälle näytetään kuvasta kirjoitetut kommentit.
-* Käyttäjä voi kirjoittaa omia kommentteja kuvan keskutelupalstaan.
