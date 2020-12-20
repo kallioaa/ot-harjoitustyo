@@ -12,8 +12,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import imagechatter.entities.ImageToHash;
-import java.sql.Date;
+import imagechatter.entity.ImageToHash;
 
 /**
  *

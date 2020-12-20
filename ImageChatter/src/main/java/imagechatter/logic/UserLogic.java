@@ -5,7 +5,7 @@
  */
 package imagechatter.logic;
 
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 import imagechatter.database.DaoUsers;
 
 

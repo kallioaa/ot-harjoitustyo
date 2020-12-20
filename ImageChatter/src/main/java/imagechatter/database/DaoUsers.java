@@ -5,7 +5,7 @@
  */
 package imagechatter.database;
 
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 
 /**
  *

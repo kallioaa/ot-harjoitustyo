@@ -5,7 +5,7 @@
  */
 package imagechatter.database;
 
-import imagechatter.entities.ImageToHash;
+import imagechatter.entity.ImageToHash;
 import java.util.List;
 
 /**

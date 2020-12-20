@@ -10,7 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**

@@ -9,7 +9,7 @@ import java.awt.image.BufferedImage;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import imagechatter.entities.ImageToHash;
+import imagechatter.entity.ImageToHash;
 import imagechatter.database.DaoImages;
 
 

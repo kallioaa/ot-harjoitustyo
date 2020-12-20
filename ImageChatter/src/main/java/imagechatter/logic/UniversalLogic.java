@@ -5,7 +5,7 @@
  */
 package imagechatter.logic;
 
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 
 /**
  *Holds values needed by all of the logic objects.

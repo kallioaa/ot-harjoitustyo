@@ -1,4 +1,4 @@
-package databaseTests;
+package databasetests;
 
 
 import imagechatter.database.Dao;
@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 import javax.imageio.ImageIO;
-import imagechatter.entities.ImageToHash;
+import imagechatter.entity.ImageToHash;
 import org.junit.After;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;

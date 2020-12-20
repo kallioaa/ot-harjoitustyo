@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logicTests;
+package logictests;
 
 
-import imagechatter.entities.ImageToHash;
-import imagechatter.entities.User;
+import imagechatter.entity.ImageToHash;
+import imagechatter.entity.User;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.net.URL;

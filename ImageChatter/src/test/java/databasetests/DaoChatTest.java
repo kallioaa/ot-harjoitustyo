@@ -1,4 +1,4 @@
-package databaseTests;
+package databasetests;
 
 
 import java.io.File;

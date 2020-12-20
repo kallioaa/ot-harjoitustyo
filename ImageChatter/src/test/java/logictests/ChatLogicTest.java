@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logicTests;
+package logictests;
 
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

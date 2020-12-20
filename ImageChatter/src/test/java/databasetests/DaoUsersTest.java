@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package databaseTests;
+package databasetests;
 
-import imagechatter.entities.User;
+import imagechatter.entity.User;
 import java.io.File;
 import imagechatter.database.Dao;
 import imagechatter.database.FileDaoUsers;

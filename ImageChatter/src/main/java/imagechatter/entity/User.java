@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package imagechatter.entities;
+package imagechatter.entity;
 
 /**
  * User with attributes
@@ -21,6 +21,9 @@ public class User {
         this.nOfComments = nOfComments;
     }
     
+    public Integer getNofComments() {
+        return userId;
+    }
     /**
      * 
      * @return User's ID

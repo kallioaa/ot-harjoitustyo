@@ -1,3 +1,5 @@
+package entitytests;
+
 
 import java.io.File;
 import java.io.IOException;
@@ -6,10 +8,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.ListIterator;
 import javax.imageio.ImageIO;
-import junit.framework.Assert;
-import imagechatter.entities.ImageToHash;
-import imagechatter.database.Dao;
-import imagechatter.database.FileDaoImages;
+import imagechatter.entity.ImageToHash;
 import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
