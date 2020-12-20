@@ -28,7 +28,9 @@ After the following, you will end up in the following view.
 
 Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button. Now when someone will search for the same picture online with the app they will see your comment and image history (the values under the picture). 
 
-The large image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
+The image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
+
+The app supports all of the most common image types. If you enter an url which is not applicable, the app will tell you by changing displaying an error message. The error message **some supported image types**. For example, common *.webp* images are supported.
 
 ## Logging out and closing the app
 
