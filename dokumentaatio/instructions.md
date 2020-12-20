@@ -1,6 +1,6 @@
 # Instructions
 
-Start by downloading this file ADD FILE
+Start by downloading the new jar [version](https://github.com/kallioaa/ot-harjoitustyo/releases/tag/V1)
 
 ## Starting the app
 
