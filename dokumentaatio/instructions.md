@@ -18,7 +18,7 @@ java -jar imagechatter.jar
 
 ## Searching for images
 
-After logging in you should end up in a view with instructions on for searching images. For example, if we want to talk about the beautiful which can be found here https://avatars2.githubusercontent.com/u/523235?s=460&u=e62cd9bb7ce8a4acfaab9171cd137c875df7b527&v=4, we just copy the url to the comment field and open image-menu (upper left corner) and press "new image from url"-button. 
+After logging in you should end up in a view with instructions on for searching images. For example, if we want to talk about the beautiful which can be found [here](https://avatars2.githubusercontent.com/u/523235?s=460&u=e62cd9bb7ce8a4acfaab9171cd137c875df7b527&v=4), we just copy the url to the comment field and open image-menu (upper left corner) and press "new image from url"-button. 
 
 ![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/searchImage.png)
 
