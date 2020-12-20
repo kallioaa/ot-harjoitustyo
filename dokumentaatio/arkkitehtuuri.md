@@ -69,15 +69,17 @@ If the credentials are okay UserLogic proceeds to call addAccount method from Da
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/LoggingInv2.png)
 
 1. When user clicks the Log in -button after typing username and password. 
-2. The ControllerUser calls the logIn method from UserLogic which calls the logIn method from DaoUsers. 
-3. If the log in is successful, meaning user is not already logged in and the credentials match, a new User Object is created and passed to the UserLogic class. If the log in is not successful null is returned. 
-4. UserLogic sets the new User to UniversalLogic class.
-5. UserLogic returns true if user is not null and false otherwise. 
-6. ControllerUser changes to mainView if the return value is true. Otherwise displayd an error message about the log in not being successful.
+2. The ControllerUser calls the logIn method
+2. UserLogic which calls the logIn method from DaoUsers. 
+4. If the log in is successful, meaning user is not already logged in and the credentials match, a new User Object is created and passed to the UserLogic class. If the log in is not successful null is returned. 
+5. UserLogic sets the new User to UniversalLogic class.
+6. UserLogic returns true if user is not null and false otherwise. 
+7. ControllerUser changes to mainView if the return value is true. Otherwise displayd an error message about the log in not being successful.
 
 ### Searching for an image
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/Searchingforapictureh.png)
+
 
 ### Adding a message
 
