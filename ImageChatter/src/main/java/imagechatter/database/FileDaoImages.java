@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import imagechatter.entities.ImageToHash;
+import java.sql.Date;
 
 /**
  *
@@ -79,7 +80,7 @@ public class FileDaoImages implements DaoImages {
      */
     @Override
     public List<String> getHistrory(Integer id) {
-        String selectString = "SELECT id_image, username, created FROM ImageHistory WHERE id_image=?";
+        String selectString = "SELECT id_image, username, datetime(created,'localtime') as created FROM ImageHistory WHERE id_image=?";
         
         List<String> returnList = new ArrayList<>();
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
@@ -97,6 +98,7 @@ public class FileDaoImages implements DaoImages {
         }   
         return returnList;
     }
+    
     
 
     /**

@@ -56,7 +56,7 @@ public class FileDaoChats implements DaoChats {
     @Override
     public List<List<String>> getMessages(Integer id) {
         List<List<String>> chatArray = null;
-        String selectString = "SELECT username, created, message FROM Messages WHERE id_image =?;";
+        String selectString = "SELECT username, datetime(created,'localtime') as created, message FROM Messages WHERE id_image =?;";
         try (Connection conn = DriverManager.getConnection("jdbc:sqlite:" + dao.getdbUrl(), dao.getdbUsername(), dao.getdbPassword());
              PreparedStatement p  = conn.prepareStatement(selectString)) {    
             p.setString(1, Integer.toString(id));
