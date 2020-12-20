@@ -24,4 +24,4 @@ The app will have three different views.
 
 1. The user can search for images online
 2. The user can view information and old comments about the image
-3. The user can leace comments
+3. The user can leave comments

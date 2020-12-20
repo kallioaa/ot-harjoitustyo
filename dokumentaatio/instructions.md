@@ -28,11 +28,13 @@ After the following, you will end up in the following view.
 
 Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button. Now when someone will search for the same picture online with the app they will see your comment and image history (the values under the picture). 
 
-The large image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
+The image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
+
+The app supports all of the most common image types. If you enter an url which is not applicable, the app will tell you by displaying an error message. **The error message lists only some supported image types**. For example, common *.webp* images are supported even though they are not mentined.
 
 ## Logging out and closing the app
 
-You can log out by pressing the "Log out" button in the top right corner and you will end up in the log in-view. You can close the app at any time by closing the window. Your user session will be closed correctly even if you dont log out first.
+You can log out by pressing the "Log out" button in the top right corner and you will end up in the log in-view. You can close the app at any time by closing the window. Your user session will be closed correctly even if you do not log out first.
 
 ## Configuration
 
