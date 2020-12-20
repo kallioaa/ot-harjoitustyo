@@ -18,7 +18,7 @@ java -jar imagechatter.jar
 
 ## Searching for images and commenting
 
-After logging in you should end up in a view with instructions on for searching images. For example, if we want to talk about the beautiful which can be found [here](https://avatars2.githubusercontent.com/u/523235?s=460&u=e62cd9bb7ce8a4acfaab9171cd137c875df7b527&v=4), we just copy the url to the comment field and open image-menu (upper left corner) and press "new image from url"-button. 
+After logging in you should end up in a view with instructions on for searching images. For example, if we want to talk about the beautiful picture which can be found [here](https://avatars2.githubusercontent.com/u/523235?s=460&u=e62cd9bb7ce8a4acfaab9171cd137c875df7b527&v=4), we just copy the url to the comment field and open image-menu (upper left corner) and press "new image from url"-button. 
 
 ![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/searchImage.png)
 
@@ -28,7 +28,7 @@ After the following, you will end up in the following view.
 
 Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button. Now when someone will search for the same picture online with the app they will see your comment and image history (the values under the picture). 
 
-The large image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. This way you can search the same picture from multiple different url addressed and end up in the same chat.
+The large image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. You can search the same picture from multiple different url addressed and end up in the same chat.
 
 ## Logging out and closing the app
 
