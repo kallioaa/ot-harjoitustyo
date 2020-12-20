@@ -63,6 +63,8 @@ The report can be found in target/site/apidocs/index.html.
 
 [Working hours](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
 
+[Testing documentation](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/testing.md)
+
 [User instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/instructions.md)
 
 [Release](https://github.com/kallioaa/ot-harjoitustyo/releases/tag/viikko5)
