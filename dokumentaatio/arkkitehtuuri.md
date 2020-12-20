@@ -60,13 +60,20 @@ Here are some the core functionalities visualized with sequence forms.
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/newUserSequence.png?raw=true)
 
-User clicks the new user button after typing username, password and passford confirmation on the UI. The UI calls UserLogic's createUser method. If there is something wrong with the credentials (password too short or confirmation incorrect) userLogic returns a string about what went wrong to the UI and which is then shown to the user. 
+User clicks the new user button after typing username, password and password confirmation on the UI. The UI calls UserLogic's createUser method. If there is something wrong with the credentials (password too short or confirmation incorrect) userLogic returns a string about what went wrong to the UI and which is then shown to the user. 
 
 If the credentials are okay UserLogic proceeds to call addAccount method from DaoUsers. Add account method returns true if the new account is created and false if the username is already taken. UserLogic returns a string about what happened to the UI. The string is null if the login is successfull, now UI changes to the Log in -view for the user.
 
 ### Logging in 
 
 ![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/LoggingInv2.png)
+
+1. When user clicks the Log in -button after typing username and password. 
+2. The ControllerUser calls the logIn method from UserLogic which calls the logIn method from DaoUsers. 
+3. If the log in is successful, meaning user is not already logged in and the credentials match, a new User Object is created and passed to the UserLogic class. If the log in is not successful null is returned. 
+4. UserLogic sets the new User to UniversalLogic class.
+5. UserLogic returns true if user is not null and false otherwise. 
+6. ControllerUser changes to mainView if the return value is true. Otherwise displayd an error message about the log in not being successful.
 
 ### Searching for an image
 
