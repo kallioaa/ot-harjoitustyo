@@ -13,8 +13,10 @@ java -jar imagechatter.jar
 ## Creating an account
 
 1. After starting the app press the create new user button
-2. Please insert your username and password. Password length must be over seven characters and can not contain spaces. The app informs you if the username is already taken.
+2. Please insert your username and password and press the "Crate new user"-button. Password length must be over seven characters and can not contain spaces. The app informs you if the username is already taken.
+3. When a new account is created successfully you will return to the log in -screen. Now insert your account credentials and press the "Log in"-button.
 
+## Searching for images
 
 
 
