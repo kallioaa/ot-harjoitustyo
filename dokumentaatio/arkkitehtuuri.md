@@ -44,12 +44,10 @@ Imagelogic class provides the imageID of a current image for UniversalLogic.
 
 ## Database
  
-The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. Dao will initialize a new database only if it does not exist already. The commands for creating the tables are included in *src/main/resources/database/tables.sql*. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
+The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. Dao will initialize a new database only if it does not exist already. The commands for creating the tables are included in *[src/main/resources/database/tables.sql](https://github.com/kallioaa/ot-harjoitustyo/blob/master/ImageChatter/src/main/resources/imagechatter/database/tables.sql))*. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
 
 Methods communicating with the database all initialize and closes the connection to the database, so there is now connection left open. Try-with-resources structure is used in every connection and statement which is recommended by Oracle.
 
-### Tables
- 
-[Tables can be found here.](https://github.com/kallioaa/ot-harjoitustyo/blob/master/ImageChatter/src/main/resources/imagechatter/database/tables.sql)
+
 
 ## Core operations
