@@ -26,7 +26,9 @@ After the following, you will end up in the following view.
 
 ![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/imageSearched.png)
 
-Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button.
+Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button. Now when someone will search for the same picture online with the app they will see your comment and image history (the values under the picture). 
+
+The large image files are not added to the database. The images are transformed into a hashcode which does not take up more space than a regular integer. This way you can search the same picture from multiple different url addressed and end up in the same chat.
 
 ## Logging out and closing the app
 
@@ -35,4 +37,4 @@ You can log out by pressing the "Log out" button in the top right corner and you
 ## Configuration
 
 The program will create a *imagechatter.db* file into the directory where you run the program from.You can reset the database by deleting the *imagechatter.db* file 
-and running the app. Please shut down the app before deleting the file
+and running the app. Please shut down the app before deleting the file.
