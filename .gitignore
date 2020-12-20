@@ -1,12 +1,5 @@
-/laskarit/viikko2/tehtävä2/Unicafe/target
 *DS_Store*
-/laskarit/viikko2/tehtävä1/Maksukortti/target/
-/laskarit/viikko2/tehtävä1/Maksukortti/Maksukortti/nbproject/
-/laskarit/viikko2/tehtävä1/Maksukortti/Maksukortti/target/
-/laskarit/viikko2/tehtävä1/Maksukortti/nbproject/
-/laskarit/viikko2/tehtävä2/Unicafe/nbproject/
-/keskuteluakuvista/nbproject/
-/KeskusteluaKuvista/nbproject/
-/KeskusteluaKuvista/target/
-/KeskusteluaKuvista/kkDatabase.db
-/KeskusteluaKuvista/testDatabase.db
+/ImageChatter/nbproject/
+/ImageChatter/kkDatabase.db
+/ImageChatter/testDatabase.db
+/ImageChatter/target/
