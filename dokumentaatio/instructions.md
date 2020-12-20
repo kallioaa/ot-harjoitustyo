@@ -14,6 +14,11 @@ java -jar imagechatter.jar
 
 After starting the app you should see the following view:
 
+![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/mainView.png)
+
+Press the "create new user"-button. You will end up in the following view.
+
+
 
 
 
