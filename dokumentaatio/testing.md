@@ -14,3 +14,6 @@ Dependencies are simulated with Mock-objects.
 
 Each Dao has its test own class in daotests-package. Before each of the tests a new database is initialized and after each the database file is deleted. The testing does not effect the database otherwise used by the app.
 
+### Test coverage
+
+
