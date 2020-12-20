@@ -16,4 +16,5 @@ Each Dao has its test own class in daotests-package. Before each of the tests a 
 
 ### Test coverage
 
+[testing](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/testcoverage.png)
 
