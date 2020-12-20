@@ -16,7 +16,7 @@ java -jar imagechatter.jar
 2. Please insert your username and password and press the "Crate new user"-button. Password length must be over seven characters and can not contain spaces. The app informs you if the username is already taken.
 3. When a new account is created successfully you will return to the log in -screen. Now insert your account credentials and press the "Log in"-button.
 
-## Searching for images
+## Searching for images and commenting
 
 After logging in you should end up in a view with instructions on for searching images. For example, if we want to talk about the beautiful which can be found [here](https://avatars2.githubusercontent.com/u/523235?s=460&u=e62cd9bb7ce8a4acfaab9171cd137c875df7b527&v=4), we just copy the url to the comment field and open image-menu (upper left corner) and press "new image from url"-button. 
 
@@ -28,9 +28,9 @@ After the following, you will end up in the following view.
 
 Now you can comment the picture by typing your comment in the textfield and pressing the "send"-button.
 
-## Imageformats supported
+## Logging out and closing the app
 
-
+You can log out by pressing the "Log out" button in the top right corner and you will end up in the log in-view. You can close the app at any time by closing the window. Your user session will be closed correctly even if you dont log out first.
 
 ## Configuration
 
