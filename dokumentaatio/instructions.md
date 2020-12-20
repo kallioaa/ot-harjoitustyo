@@ -12,6 +12,10 @@ java -jar imagechatter.jar
 
 ## Creating an account
 
+After starting the app you should see the following view:
+
+
+
 
 ## Configuration
 
