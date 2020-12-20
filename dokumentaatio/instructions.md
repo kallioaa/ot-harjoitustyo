@@ -1,6 +1,6 @@
 # Instructions
 
-Start by downloading the new jar [jar file](https://github.com/kallioaa/ot-harjoitustyo/releases/download/V1/ImageChatterV1.jar)
+Start by downloading the [jar file](https://github.com/kallioaa/ot-harjoitustyo/releases/download/V1/ImageChatterV1.jar)
 
 ## Starting the app
 
