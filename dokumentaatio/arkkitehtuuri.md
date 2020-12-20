@@ -43,7 +43,9 @@ ChatLogic uses the information about the current image and user to offer methods
 Imagelogic class provides the imageID of a current image for UniversalLogic. 
 
 ## Database
+ 
+The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
 
-Sovellus käyttää tietojen tallentamiseen SQLite tietokantaa, jossa on neljä eri taulua.
+The methods communicating with the database all initialize and closes the connection to the database, so there is now connection left open. Try-with-resources structure is used in every connection and statement which is recommended by Oracle.
 
 ## Core operations
