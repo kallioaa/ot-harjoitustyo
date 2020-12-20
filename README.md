@@ -67,5 +67,7 @@ The report can be found in target/site/apidocs/index.html.
 
 [User instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/instructions.md)
 
+## New release
+
 [Release](https://github.com/kallioaa/ot-harjoitustyo/releases/tag/viikko5)
 
