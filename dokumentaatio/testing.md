@@ -25,4 +25,6 @@ The test for ImageToHash can be found in entitytests package. User class contain
 
 ## End-to-End testing
 
-The program has been tested with MacOs and Cubbli devices. 
+The program has been tested with MacOs and Cubbli devices. Tested scenarios include running multiple ImageChatters simultaneously and trying to log on the same user. This way also testing the capabilities of the SQLlite implementation. Different account configurations were also tested.
+
+Although manual testing has been done, automated testing for the user interface would be very valuable.
