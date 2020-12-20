@@ -87,5 +87,7 @@ If the credentials are okay UserLogic proceeds to call addAccount method from Da
 
 ### Things to improve and closing thoughts
 
-I am overall pretty happy about my the archictecture of the app. In the future, I will probably move checking the new user credentials to DaoUsers. I did not have the time to finnish everything I wanted for the *Loppupalautus* release, that is why there exists some methods and attributes in the User class, which are not used.
+I am overall pretty happy about my the archictecture of the app. In the future, I will probably move checking the new user credentials to DaoUsers. 
+
+Because of the lack of time, I did not finnish everything I wanted for the *Loppupalautus* release. This is why there exists some methods and attributes in the User class, which are not used.
 
