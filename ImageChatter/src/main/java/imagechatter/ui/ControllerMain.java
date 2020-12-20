@@ -52,6 +52,7 @@ public class ControllerMain implements Initializable {
     @FXML
     private TextField tfMessage;
     
+    
     private void loadImage() {
         Image currentNetImage = null;
         BufferedImage bImg = null;
