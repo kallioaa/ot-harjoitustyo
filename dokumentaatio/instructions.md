@@ -22,6 +22,9 @@ After logging in you should end up in a view with instructions on for searching 
 
 ![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/searchImage.png)
 
+After the following, you will end up in the following view.
+
+![instructions](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/imageSearched.png)
 
 
 
