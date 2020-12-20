@@ -15,7 +15,7 @@ The user interface follows the Model-View-Controller model. It has a total of th
 - creating a new user
 - searching for images and senging messages (main view).
 
-Views are implemented by FXML-files which can be found in *src/main/resources/gui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
+Views are implemented by FXML-files which can be found in *src/main/resources/ui*. All of the views have their own Controller which can be found in *imagechatter.gui*.
 
 The controllers are connected to different logic classes. Controllers for Login and creating a new user use the UserLogic class. Controller for the main view uses the userLogic, imageLogic and chatLogic classes.
 
@@ -43,7 +43,28 @@ ChatLogic uses the information about the current image and user to offer methods
 Imagelogic class provides the imageID of a current image for UniversalLogic. 
 
 ## Database
+ 
+The ImageChatter is using a SQLite database for storing all the information. Dao class initializes the database (tables) and holds information about the session -- database password etc. Dao will initialize a new database only if it does not exist already. The commands for creating the tables are being read from *[src/main/resources/database/tables.sql](https://github.com/kallioaa/ot-harjoitustyo/blob/master/ImageChatter/src/main/resources/imagechatter/database/tables.sql)*. After this, all communcation with the database is done by the FileDaoUsers, FileDaoImages and FileDaoChats classes.
 
-Sovellus käyttää tietojen tallentamiseen SQLite tietokantaa, jossa on neljä eri taulua.
+Methods communicating with the database all initialize and closes the connection to the database, so there is now connection left open. Try-with-resources structure is used in every connection and statement, which is recommended by Oracle.
+
+### Files
+
+When you run the program, a new file called *imagechatter.db* will be added to your current repository. Running the tests will create a file called *testDatabase.db*.
 
 ## Core operations
+
+Here are some the core functionalities visualized with sequence forms.
+
+### Creating a new user
+
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/newUserSequence.png?raw=true)
+
+User clicks the new user button after typing username, password and passford confirmation on the UI. The UI calls UserLogic's createUser method. If there is something wrong with the credentials (password too short or confirmation incorrect) userLogic returns a string about what went wrong to the UI and which is then shown to the user. 
+
+If the credentials are okay UserLogic proceeds to call addAccount method from DaoUsers. Add account method returns true if the new account is created and false if the username is already taken. UserLogic returns a string about what happened to the UI. String "successful" changes the Log in -view for the user.
+
+### Logging in 
+
+
+
