@@ -66,5 +66,9 @@ If the credentials are okay UserLogic proceeds to call addAccount method from Da
 
 ### Logging in 
 
+### Searching for an image
+
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/SearchingForAPicture.png?raw=true)
+
 
 
