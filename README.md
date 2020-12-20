@@ -20,7 +20,7 @@ mvn jacoco:report
 
 This report can be found from target/site/jacoco/index.html.
 
-### Creating a jar file.
+### Creating a jar file
 
 You can generate a jar file with all dependencies by running the following command from the ImageChatter repository.
 
@@ -34,7 +34,7 @@ And if you want to run the file. Run the following command.
 java -jar ImageChatter-1.0-SNAPSHOT.jar
 ```
 
-### Creating a checkstyle report.
+### Creating a checkstyle report
 
 You can generate a checkstyle report with the following command.
 
