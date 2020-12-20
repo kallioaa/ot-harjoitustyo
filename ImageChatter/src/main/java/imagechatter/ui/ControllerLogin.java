@@ -17,6 +17,10 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import imagechatter.logic.UserLogic;
 
+/**
+ * Controller for the log in view
+ * @author aatukallio
+ */
 public class ControllerLogin {
     
     private UserLogic userLogic;
