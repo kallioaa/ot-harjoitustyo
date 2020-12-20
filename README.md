@@ -13,17 +13,14 @@ mvn clean compile assembly:single
 
 ## Määrittelydokumentin toiminnallisuudesta toteutettu
 
-- Käyttöliittymä [x] 
-- Kuvien lisääminen tietokantaan [x]
-- Viestien lisääminen tietokantaan [x] 
-- admin käyttäjä, jota en todennäköisesti toteuta []
-- Kuvan hakeminen id perusteella []
 
-[Harjoitustyön määrittelydokumentti](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
+[Specifications](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
 
-[Työaikakirjanoito](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
+[Architecture](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
-[Arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Working hours](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
+
+[User instructions]()
 
 [Release](https://github.com/kallioaa/ot-harjoitustyo/releases/tag/viikko5)
 
