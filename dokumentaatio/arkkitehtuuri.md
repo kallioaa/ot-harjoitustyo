@@ -66,11 +66,11 @@ If the credentials are okay UserLogic proceeds to call addAccount method from Da
 
 ### Logging in 
 
-![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/LoggingIn.png?raw=true)
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/LogginginH.png)
 
 ### Searching for an image
 
-![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/SearchingForAPicture.png?raw=true)
+![arkkitehtuuri](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/pictures/Searchingforapictureh.png)
 
 
 
