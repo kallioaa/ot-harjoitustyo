@@ -34,7 +34,7 @@ The app supports all of the most common image types. If you enter an url which i
 
 ## Logging out and closing the app
 
-You can log out by pressing the "Log out" button in the top right corner and you will end up in the log in-view. You can close the app at any time by closing the window. Your user session will be closed correctly even if you dont log out first.
+You can log out by pressing the "Log out" button in the top right corner and you will end up in the log in-view. You can close the app at any time by closing the window. Your user session will be closed correctly even if you do not log out first.
 
 ## Configuration
 
