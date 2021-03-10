@@ -57,11 +57,11 @@ The report can be found in target/site/apidocs/index.html.
 ## Documentation for the app
 
 
-[Specifications](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/maarittelydokumentti.md)
+[Specifications](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/specifications.md)
 
-[Architecture](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
+[Architecture](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/arcihitecture.md)
 
-[Working hours](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/työaikakirjanpito.md)
+[Working hours](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/workinghours.md)
 
 [Testing documentation](https://github.com/kallioaa/ot-harjoitustyo/blob/master/dokumentaatio/testing.md)
 
